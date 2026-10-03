@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="ASTREA SSP - page not found.">
   <title>404 - ASTREA SSP</title>
+  <script>
+    (() => {
+      const { pathname, search, hash } = window.location;
+      if (pathname.length > 1 && pathname.endsWith('/')) {
+        const cleanPath = pathname.replace(/\/+$/, '');
+        window.location.replace(cleanPath + search + hash);
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <style>
@@ -209,7 +218,7 @@
   <nav class="nav">
     <a href="https://astreassp.de/" data-i18n="nav_overview">Overview</a>
     <a href="https://astreassp.de/projects" data-i18n="nav_projects">Systems</a>
-    <a href="https://astreassp.de/about.html" data-i18n="nav_about">The Program</a>
+    <a href="https://astreassp.de/about" data-i18n="nav_about">The Program</a>
     <a href="https://watch.astreassp.de/" data-i18n="nav_watch">Watch</a>
     <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer" data-i18n="nav_discord">Discord ↗</a>
     <a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer" data-i18n="nav_github">GitHub ↗</a>
