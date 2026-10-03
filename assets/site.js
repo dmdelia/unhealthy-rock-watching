@@ -12,7 +12,7 @@
 
   const translations = {
     en: {
-      nav_overview:'Overview', nav_projects:'Systems', nav_about:'The Program', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENU',
+      nav_overview:'Overview', nav_projects:'Systems', nav_about:'The Program', nav_watch:'Watch', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENU',
       open_nav:'Open navigation',
       hero_eyebrow:'ASTREA SOLO SPACE PROGRAM / GERMANY',
       hero_title:'Engineering systems<br>for the edge of flight.',
@@ -73,7 +73,7 @@
       validate:'VALIDATE', validate_copy:'Odd/even and secondary-event checks help reject common false positives.'
     },
     de: {
-      nav_overview:'Übersicht', nav_projects:'Systeme', nav_about:'Das Programm', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENÜ',
+      nav_overview:'Übersicht', nav_projects:'Systeme', nav_about:'Das Programm', nav_watch:'Watch', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENÜ',
       open_nav:'Navigation öffnen',
       hero_eyebrow:'ASTREA SOLO SPACE PROGRAM / DEUTSCHLAND',
       hero_title:'Engineering-Systeme<br>an der Grenze des Flugs.',
