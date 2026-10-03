@@ -2,7 +2,21 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTREA SSP - JOANUS exoplanet discovery and validation pipeline."><title>JOANUS - ASTREA SSP</title><link rel="stylesheet" href="../assets/site.css"><link rel="icon" type="image/png" href="../favicon.png"></head>
 <body data-page="joanus">
-<header class="site-header"><a class="brand" href="../index.html"><img class="brand-logo" src="../logo.png" alt="ASTREA SSP logo"><span>ASTREA SSP</span></a><button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENU</button><nav class="nav"><a href="../index.html" data-i18n="nav_overview">Overview</a><a class="active" href="../projects.html" data-i18n="nav_projects">Systems</a><a href="../about.html" data-i18n="nav_about">The Program</a><a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer" data-i18n="nav_discord">Discord ↗</a><a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer" data-i18n="nav_github">GitHub ↗</a></nav></header>
+<header class="site-header">
+  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP home">
+    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="ASTREA SSP logo">
+    <span>ASTREA SSP</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENU</button>
+  <nav class="nav">
+    <a href="https://astreassp.de/" data-i18n="nav_overview">Overview</a>
+    <a class="active" href="https://astreassp.de/projects.html" data-i18n="nav_projects">Systems</a>
+    <a href="https://astreassp.de/about.html" data-i18n="nav_about">The Program</a>
+    <a href="https://watch.astreassp.de/" data-i18n="nav_watch">Watch</a>
+    <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer" data-i18n="nav_discord">Discord ↗</a>
+    <a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer" data-i18n="nav_github">GitHub ↗</a>
+  </nav>
+</header>
 <main><section class="page-hero"><p class="eyebrow" data-i18n="astrophysics">02 / ASTROPHYSICS</p><h1>JOANUS</h1><p data-i18n="jo_desc">Exoplanet discovery and validation pipeline built around relative photometry, BLS searches and automated false-positive checks.</p></section>
 <section class="detail-grid reveal"><aside><span class="section-label" data-i18n="pipeline01">PIPELINE / 01</span></aside><div><h2 data-i18n="search_validate">Search first.<br>Validate independently.</h2><p data-i18n="jo_long">JOANUS processes public space-telescope photometry with a relative-first approach, searches for periodic transit signatures and exports structured candidate telemetry for further validation.</p><dl class="spec-list"><div><dt>DATA</dt><dd>TESS / Kepler / Roman-ready</dd></div><div><dt>METHOD</dt><dd>BLS / Signal Processing</dd></div><div><dt>OUTPUT</dt><dd>Candidate telemetry / JSON</dd></div></dl></div></section>
 <section class="principles"><article><span>01</span><h3 data-i18n="photometry">PHOTOMETRY</h3><p data-i18n="photometry_copy">Relative measurements keep the search focused on observable transit depth and periodicity.</p></article><article><span>02</span><h3 data-i18n="search">SEARCH</h3><p data-i18n="search_copy">Box Least Squares identifies candidate periods across batches of targets.</p></article><article><span>03</span><h3 data-i18n="validate">VALIDATE</h3><p data-i18n="validate_copy">Odd/even and secondary-event checks help reject common false positives.</p></article></section>
