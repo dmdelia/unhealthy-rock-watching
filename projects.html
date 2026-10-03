@@ -1,13 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/projects">
-  <link rel="canonical" href="https://astreassp.de/projects">
-  <title>Projects - ASTREA SSP</title>
-  <script>location.replace('/projects');</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ASTREA Solo Space Program - active technical systems.">
+  <title>Systems - ASTREA SSP</title>
+  <link rel="stylesheet" href="/assets/site.css"><link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
-  <p><a href="/projects">Continue to ASTREA Systems</a></p>
-</body>
-</html>
+<body data-page="projects">
+<header class="site-header">
+  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP home">
+    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="ASTREA SSP logo">
+    <span>ASTREA SSP</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENU</button>
+  <nav class="nav">
+    <a href="https://astreassp.de/" data-i18n="nav_overview">Overview</a>
+    <a class="active" href="https://astreassp.de/projects" data-i18n="nav_projects">Systems</a>
+    <a href="https://astreassp.de/about.html" data-i18n="nav_about">The Program</a>
+    <a href="https://watch.astreassp.de/" data-i18n="nav_watch">Watch</a>
+    <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer" data-i18n="nav_discord">Discord ↗</a>
+    <a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer" data-i18n="nav_github">GitHub ↗</a>
+  </nav>
+</header>
+<main>
+  <section class="page-hero"><p class="eyebrow" data-i18n="projects_eyebrow">ASTREA SSP / SYSTEMS</p><h1 data-i18n="projects_title">Systems under<br>development.</h1><p data-i18n="projects_lead">The current ASTREA program consists of two technical tracks: autonomous aerospace hardware and computational astrophysics.</p></section>
+  <section class="project-index">
+    <a class="index-card" href="projects/icarus.html"><div class="index-no">01</div><div><p class="eyebrow" data-i18n="flight_systems">FLIGHT SYSTEMS</p><h2>ICARUS-RLV</h2><p data-i18n="ic_index">Autonomous flight hardware for guidance, navigation, control, recovery and scientific payload experiments.</p><span class="arrow-link" data-i18n="open_project">Open system ↗</span></div></a>
+    <a class="index-card" href="projects/joanus.html"><div class="index-no">02</div><div><p class="eyebrow" data-i18n="astrophysics">DATA SCIENCE / ASTROPHYSICS</p><h2>JOANUS</h2><p data-i18n="jo_index">Automated exoplanet discovery and validation using space telescope photometry and signal-processing methods.</p><span class="arrow-link" data-i18n="open_project">Open system ↗</span></div></a>
+  </section>
+</main>
+<footer class="footer"><span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span><div><a href="index.html" data-i18n="nav_overview">Overview</a><a href="about.html" data-i18n="nav_about">The Program</a><a href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer">GitHub ↗</a></div></footer>
+<script src="/assets/site.js"></script></body></html>
