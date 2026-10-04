@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ICARUS-M1 Karton- und Fit-Test zur physischen Validierung von Avionik-Anordnung, Schwerpunktlage und Auslösemechanismen.">
+  <title>Karton-Test - ICARUS-M1 - ASTREA SSP</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/note.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body data-page="karton-test">
+<header class="site-header">
+  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP home">
+    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="ASTREA SSP logo">
+    <span>ASTREA SSP</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENU</button>
+  <nav class="nav">
+    <a href="https://astreassp.de/" data-i18n="nav_overview">Overview</a>
+    <a class="active" href="https://astreassp.de/projects" data-i18n="nav_projects">Systems</a>
+    <a href="https://astreassp.de/about" data-i18n="nav_about">The Program</a>
+    <a href="https://watch.astreassp.de/" data-i18n="nav_watch">Watch</a>
+    <a href="https://astreassp.de/support">Support</a>
+    <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer" data-i18n="nav_discord">Discord ↗</a>
+    <a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer" data-i18n="nav_github">GitHub ↗</a>
+  </nav>
+</header>
+
+<main>
+  <section class="note-hero">
+    <div class="note-hero-grid"></div>
+    <div class="note-hero-copy">
+      <a class="note-back" href="/projects/icarus" data-note="back">← ICARUS-RLV</a>
+      <p class="eyebrow" data-note="eyebrow">ICARUS-M1 / PHYSICAL VALIDATION</p>
+      <h1 data-note="title">Karton- und<br>Fit-Test.</h1>
+      <p class="note-lead" data-note="lead">Bevor das finale Chassis aus Carbon und PETG-CF in den 3D-Druck geht, absolviert die ICARUS-M1-Plattform den physischen Karton- und Fit-Test.</p>
+    </div>
+
+    <aside class="note-status">
+      <div class="note-status-code">M1</div>
+      <dl>
+        <div><dt data-note="meta_platform">PLATTFORM</dt><dd>ICARUS-M1</dd></div>
+        <div><dt data-note="meta_scale">MODELL</dt><dd>1:1</dd></div>
+        <div><dt data-note="meta_phase">PHASE</dt><dd data-note="meta_phase_value">PROTOTYP-VALIDIERUNG</dd></div>
+        <div><dt data-note="meta_focus">FOKUS</dt><dd data-note="meta_focus_value">FIT / BALANCE / RELEASE</dd></div>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="note-intro">
+    <div class="section-label" data-note="objective_label">01 / TESTZIEL</div>
+    <div>
+      <h2 data-note="objective_title">Fehler finden, bevor sie im finalen Chassis landen.</h2>
+      <p data-note="objective_copy">Ziel ist die direkte Validierung der Avionik-Anordnung, der Schwerpunktlage sowie der mechanischen Auslöser im maßstabsgetreuen Prototyp.</p>
+    </div>
+  </section>
+
+  <section class="note-tests">
+    <article>
+      <span>01</span>
+      <p class="eyebrow" data-note="fit_kicker">HARDWARE FIT</p>
+      <h2 data-note="fit_title">Avionik im 1:1 Modell.</h2>
+      <p data-note="fit_copy">Kernpunkt des Testlaufs ist das physische Einpassen von ESP32 Flight Computer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.</p>
+      <div class="note-tags"><span>ESP32</span><span>BATTERY</span><span>IMU</span><span>SD MODULE</span></div>
+    </article>
+
+    <article>
+      <span>02</span>
+      <p class="eyebrow" data-note="balance_kicker">CENTER OF MASS</p>
+      <h2 data-note="balance_title">Balance vor Steuerung.</h2>
+      <p data-note="balance_copy">Besonders wichtig ist das exakte Ausmessen der Balance für eine stabile, neutrale Fluglage im freien Fall, noch bevor aktive Steuerelemente eingreifen.</p>
+      <div class="note-tags"><span>CG</span><span>FREE FALL</span><span>PASSIVE STABILITY</span></div>
+    </article>
+
+    <article>
+      <span>03</span>
+      <p class="eyebrow" data-note="release_kicker">SEPARATION</p>
+      <h2 data-note="release_title">Trennung unter realer Last.</h2>
+      <p data-note="release_copy">Eine Simulation der servogesteuerten Trennung von der Trägerplattform prüft den Auslösemechanismus unter Drop-Test ähnlichen Bedingungen.</p>
+      <div class="note-tags"><span>SERVO</span><span>SEPARATION</span><span>LOAD TEST</span></div>
+    </article>
+
+    <article>
+      <span>04</span>
+      <p class="eyebrow" data-note="recovery_kicker">RECOVERY</p>
+      <h2 data-note="recovery_title">Fallschirm-Freigabe prüfen.</h2>
+      <p data-note="recovery_copy">Zusätzlich wird die Fallschirm-Freigabe unter realer Gewichtsbelastung überprüft, bevor der Mechanismus im späteren Flug-Chassis eingesetzt wird.</p>
+      <div class="note-tags"><span>PARACHUTE</span><span>RELEASE</span><span>WEIGHT LOAD</span></div>
+    </article>
+  </section>
+
+  <section class="note-result">
+    <div class="section-label" data-note="result_label">02 / WARUM DIESER TEST</div>
+    <div>
+      <h2 data-note="result_title">Erst validieren.<br>Dann fertigen.</h2>
+      <p data-note="result_copy">Dieser Zwischenschritt verhindert Konstruktionsfehler vor der Fertigung des Flug-Chassis und stellt sicher, dass Hardware und Flight Software auf einem soliden Fundament aufbauen.</p>
+      <a class="button button-dark" href="/projects/icarus" data-note="icarus_button">ICARUS-RLV ansehen →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span>
+  <div>
+    <a href="/projects/icarus">ICARUS-RLV</a>
+    <a href="/projects" data-i18n="nav_projects">Systems</a>
+    <a href="/about" data-i18n="nav_about">The Program</a>
+    <a href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+(() => {
+  const langs = Array.isArray(navigator.languages) && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || 'de'];
+  const de = langs.some((language) => String(language).toLowerCase().startsWith('de'));
+
+  const copy = de ? {
+    back:'← ICARUS-RLV',
+    eyebrow:'ICARUS-M1 / PHYSISCHE VALIDIERUNG',
+    title:'Karton- und<br>Fit-Test.',
+    lead:'Bevor das finale Chassis aus Carbon und PETG-CF in den 3D-Druck geht, absolviert die ICARUS-M1-Plattform den physischen Karton- und Fit-Test.',
+    meta_platform:'PLATTFORM',
+    meta_scale:'MODELL',
+    meta_phase:'PHASE',
+    meta_phase_value:'PROTOTYP-VALIDIERUNG',
+    meta_focus:'FOKUS',
+    meta_focus_value:'FIT / BALANCE / RELEASE',
+    objective_label:'01 / TESTZIEL',
+    objective_title:'Fehler finden, bevor sie im finalen Chassis landen.',
+    objective_copy:'Ziel ist die direkte Validierung der Avionik-Anordnung, der Schwerpunktlage sowie der mechanischen Auslöser im maßstabsgetreuen Prototyp.',
+    fit_kicker:'HARDWARE FIT',
+    fit_title:'Avionik im 1:1 Modell.',
+    fit_copy:'Kernpunkt des Testlaufs ist das physische Einpassen von ESP32 Flight Computer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.',
+    balance_kicker:'SCHWERPUNKTLAGE',
+    balance_title:'Balance vor Steuerung.',
+    balance_copy:'Besonders wichtig ist das exakte Ausmessen der Balance für eine stabile, neutrale Fluglage im freien Fall, noch bevor aktive Steuerelemente eingreifen.',
+    release_kicker:'TRENNUNG',
+    release_title:'Trennung unter realer Last.',
+    release_copy:'Eine Simulation der servogesteuerten Trennung von der Trägerplattform prüft den Auslösemechanismus unter Drop-Test ähnlichen Bedingungen.',
+    recovery_kicker:'BERGUNG',
+    recovery_title:'Fallschirm-Freigabe prüfen.',
+    recovery_copy:'Zusätzlich wird die Fallschirm-Freigabe unter realer Gewichtsbelastung überprüft, bevor der Mechanismus im späteren Flug-Chassis eingesetzt wird.',
+    result_label:'02 / WARUM DIESER TEST',
+    result_title:'Erst validieren.<br>Dann fertigen.',
+    result_copy:'Dieser Zwischenschritt verhindert Konstruktionsfehler vor der Fertigung des Flug-Chassis und stellt sicher, dass Hardware und Flight Software auf einem soliden Fundament aufbauen.',
+    icarus_button:'ICARUS-RLV ansehen →'
+  } : {
+    back:'← ICARUS-RLV',
+    eyebrow:'ICARUS-M1 / PHYSICAL VALIDATION',
+    title:'Cardboard and<br>fit test.',
+    lead:'Before the final carbon and PETG-CF chassis goes into production, the ICARUS-M1 platform completes a physical cardboard and fit test.',
+    meta_platform:'PLATFORM',
+    meta_scale:'MODEL',
+    meta_phase:'PHASE',
+    meta_phase_value:'PROTOTYPE VALIDATION',
+    meta_focus:'FOCUS',
+    meta_focus_value:'FIT / BALANCE / RELEASE',
+    objective_label:'01 / TEST OBJECTIVE',
+    objective_title:'Find errors before they reach the final chassis.',
+    objective_copy:'The goal is direct validation of the avionics layout, center of mass and mechanical release systems in a full-scale prototype.',
+    fit_kicker:'HARDWARE FIT',
+    fit_title:'Avionics in a 1:1 model.',
+    fit_copy:'The core of the test is physically fitting the ESP32 flight computer, battery system, IMU sensors and SD module into the 1:1 model.',
+    balance_kicker:'CENTER OF MASS',
+    balance_title:'Balance before control.',
+    balance_copy:'A key task is precisely measuring the balance for a stable, neutral attitude in free fall before any active control elements intervene.',
+    release_kicker:'SEPARATION',
+    release_title:'Separation under real load.',
+    release_copy:'A simulation of the servo-controlled separation from the carrier platform tests the release mechanism under drop-test-like conditions.',
+    recovery_kicker:'RECOVERY',
+    recovery_title:'Verify parachute release.',
+    recovery_copy:'The parachute release is also checked under realistic weight load before the mechanism is used in the later flight chassis.',
+    result_label:'02 / WHY THIS TEST',
+    result_title:'Validate first.<br>Manufacture second.',
+    result_copy:'This intermediate step prevents design errors before flight-chassis production and helps ensure that hardware and flight software are built on a solid foundation.',
+    icarus_button:'View ICARUS-RLV →'
+  };
+
+  document.documentElement.lang = de ? 'de' : 'en';
+  document.querySelectorAll('[data-note]').forEach((element) => {
+    const key = element.dataset.note;
+    if (copy[key] !== undefined) element.innerHTML = copy[key];
+  });
+  document.title = de
+    ? 'Karton-Test - ICARUS-M1 - ASTREA SSP'
+    : 'Cardboard Fit Test - ICARUS-M1 - ASTREA SSP';
+})();
+</script>
+</body>
+</html>
