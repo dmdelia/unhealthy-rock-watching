@@ -25,15 +25,15 @@ const trans={
 '.av-back':'← BACK TO ICARUS-RLV'
 };
 if(lang==='en'){for(const [selector,html] of Object.entries(trans)){const e=document.querySelector(selector);if(e)e.innerHTML=html;}steps.forEach((s,i)=>{const tag=s.querySelector('.av-tag'),body=s.querySelector('div>p:last-child');if(tag)tag.textContent=english[i][0];if(body)body.textContent=english[i][1]})}
-const points=[[.49,.48],[.225,.59],[.82,.49],[.59,.12],[.305,.55],[.205,.8],[.115,.18]];
+const points=[[.465,.505],[.145,.79],[.095,.13],[.955,.46],[.50,.88],[.83,.79],[.705,.28]];
 const names=['ESP32 DEVKIT V1','MPU-6050','MICRO BEC & XT30','SERVO M1-M4','U6 / U7','KEY1-KEY4','BUZZER & RGB'];
 let current=-1,ticking=false;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function frame(){
-const height=Math.max(1,innerHeight), center=height*.52;
+const height=Math.max(1,innerHeight), center=height*.50;
 let best=0,dist=Infinity;
 steps.forEach((el,i)=>{const r=el.getBoundingClientRect();const d=Math.abs((r.top+r.bottom)/2-center);if(d<dist){dist=d;best=i}});
 if(best!==current){current=best;steps.forEach((el,i)=>el.classList.toggle('is-active',best===i));label.textContent=names[best];root.style.setProperty('--mx',(100*points[best][0])+'%');root.style.setProperty('--my',(100*points[best][1])+'%');root.style.setProperty('--marker-visible','1')}
-if(!reduced){const rect=section.getBoundingClientRect(),progress=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height-height)));root.style.setProperty('--rx',((.8-progress*1.6)).toFixed(2)+'deg');root.style.setProperty('--ry',((-1.3+progress*2.6)).toFixed(2)+'deg');root.style.setProperty('--zoom',(1+progress*.014).toFixed(3));root.style.setProperty('--glint',(-150+progress*300)+'%')}
+if(!reduced){const rect=section.getBoundingClientRect(),progress=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height-height)));root.style.setProperty('--rx',((.5-progress*1)).toFixed(2)+'deg');root.style.setProperty('--ry',((-1+progress*2)).toFixed(2)+'deg');root.style.setProperty('--zoom',(1+progress*.012).toFixed(3));root.style.setProperty('--glint',(-150+progress*300)+'%')}
 ticking=false;
 }
 const onScroll=()=>{if(ticking)return;ticking=true;requestAnimationFrame(frame)};
