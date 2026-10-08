@@ -12,3 +12,12 @@
 @media(max-width:900px){.hero-stage{position:relative;right:auto;bottom:auto;width:100%;height:420px;order:2}.hero{display:flex;flex-direction:column;align-items:stretch}.mission-reason,.program-banner{grid-template-columns:1fr}}
 @media(max-width:800px){.site-header{padding:0 18px}.nav-toggle{display:block}.nav{position:absolute;display:none;left:0;right:0;top:74px;background:#08090a;padding:25px 20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--dark-line)}.nav.is-open{display:flex}.hero{grid-template-columns:1fr;min-height:auto;padding-top:85px;padding-bottom:100px}.hero-graphic{height:420px;order:2}.hero-meta{bottom:20px;left:20px;right:20px}.intro,.roadmap,.detail-grid,.mission-reason,.about-roadmap{grid-template-columns:1fr}.project-feature{grid-template-columns:1fr}.project-feature .project-info{order:2}.project-image{min-height:400px}.principles{grid-template-columns:1fr}.principles article{border-right:0;border-bottom:1px solid var(--dark-line)}.footer{flex-direction:column;gap:18px}.index-card{grid-template-columns:55px 1fr}.discord-strip{align-items:flex-start;flex-direction:column}.statement{text-align:left}.hero h1{font-size:clamp(50px,14vw,78px)}.timeline article{grid-template-columns:1fr}.timeline p{grid-column:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+/* Editorial sections without decorative micro-label columns. */
+.intro.intro--single,
+.roadmap.roadmap--single,
+.roadmap.about-roadmap.about-roadmap--single,
+.detail-grid.detail-grid--single{grid-template-columns:minmax(0,1fr)}
+.index-card.index-card--clean{grid-template-columns:minmax(0,1fr)}
+.intro.intro--single .intro-copy,.roadmap.roadmap--single .roadmap-main{max-width:1000px}
+.detail-grid.detail-grid--single > div{max-width:860px}

@@ -69,3 +69,10 @@ h1,h2,h3{letter-spacing:-.06em}p{line-height:1.64}.eyebrow,.section-label{font:7
 .as-page-index{border-top:1px solid var(--line)}
 @media(max-width:950px){.index-card{grid-template-columns:40px 1fr;gap:20px}.as-index-visual{grid-column:2;min-height:230px}.as-science-visual{grid-template-columns:1fr}.as-science-visual>div{padding:0 0 20px}}
 @media(max-width:650px){.index-card{grid-template-columns:32px 1fr;padding:56px 0}.index-card h2{font-size:clamp(48px,13vw,80px)}.as-index-visual{min-height:180px}.as-science-visual{padding:32px 24px}.as-science-visual img{max-height:370px}.as-science-visual p{font-size:16px}}
+
+/* No reserved columns for removed section labels. */
+.intro.intro--single,
+.roadmap.roadmap--single,
+.roadmap.about-roadmap.about-roadmap--single,
+.detail-grid.detail-grid--single{grid-template-columns:minmax(0,1fr)}
+.index-card.index-card--clean{grid-template-columns:minmax(0,1fr)}

@@ -8,9 +8,9 @@
 .av-intro-inner{padding:130px 0 50px}
 .av-kicker,.av-tag,.av-intro-bottom,.av-board-top,.av-board-bottom,.av-step-no,.av-architecture-grid article>span,.av-caution{font:700 11px/1.5 monospace;letter-spacing:.095em}
 .av-kicker{color:#a5bab7}
-.av-intro h1{font-size:clamp(68px,11vw,158px);line-height:.89;letter-spacing:-.077em;margin:28px 0 35px;overflow-wrap:anywhere}
+.av-intro h1{font-size:clamp(68px,11vw,158px);line-height:.89;letter-spacing:-.077em;margin:0 0 35px;overflow-wrap:anywhere}
 .av-lead{font-size:clamp(17px,1.7vw,21px);line-height:1.65;max-width:650px;color:#b7c2c2}
-.av-intro-bottom{margin-top:90px;padding-top:22px;border-top:1px solid #3a4143;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#a4afb0}
+.av-intro-bottom{margin-top:40px;padding-top:0;border-top:0;display:flex;align-items:center;justify-content:flex-start;gap:18px;color:#a4afb0}
 .av-intro-bottom a{color:#f8faf8}
 .av-intro-bottom a:hover,.av-back:hover{text-decoration:underline}
 /* Editorial hardware story: fixed board left, unboxed technical type right. */
@@ -166,7 +166,7 @@
   letter-spacing:.12em;
 }
 .av-architecture{background:#e7e9e6;color:#101416;padding:130px 0 150px}
-.av-architecture h2{font-size:clamp(52px,8vw,102px);line-height:.98;margin:24px 0 78px}
+.av-architecture h2{font-size:clamp(52px,8vw,102px);line-height:.98;margin:0 0 78px}
 .av-architecture-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
 .av-architecture-grid article{border-top:2px solid #131819;padding:30px 0}
 .av-architecture-grid article>span{color:#5b6667}
