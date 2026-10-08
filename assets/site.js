@@ -12,6 +12,7 @@
 
   const translations = {
     en: {
+      ic_figure_note:'Prototype flight-control board layout. Functions will be verified during bench tests.', ic_figure_link:'EXPLORE THE BOARD ↗', jo_figure_note:'Schematic representation of periodic transit signatures. No observational data.',
       nav_overview:'Overview', nav_projects:'Systems', nav_about:'The Program', nav_watch:'Watch', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENU',
       open_nav:'Open navigation',
       hero_eyebrow:'ASTREA SOLO SPACE PROGRAM / GERMANY',
@@ -74,6 +75,7 @@
       validate:'VALIDATE', validate_copy:'Odd/even and secondary-event checks help reject common false positives.'
     },
     de: {
+      ic_figure_note:'Prototypenlayout der Flugsteuerung. Funktionen werden im Bench-Test geprüft.', ic_figure_link:'PLATINE IM DETAIL ENTDECKEN ↗', jo_figure_note:'Schematische Darstellung periodischer Transit-Signale. Keine echten Messdaten.',
       nav_overview:'Übersicht', nav_projects:'Systeme', nav_about:'Das Programm', nav_watch:'Watch', nav_discord:'Discord ↗', nav_github:'GitHub ↗', menu:'MENÜ',
       open_nav:'Navigation öffnen',
       hero_eyebrow:'ASTREA SOLO SPACE PROGRAM / DEUTSCHLAND',
