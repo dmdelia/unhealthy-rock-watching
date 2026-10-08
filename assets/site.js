@@ -142,11 +142,11 @@
   });
 
   const titles = {
-    index: ['ASTREA SSP - Solo Space Program', 'ASTREA SSP - Solo Space Program'],
-    projects: ['Systems - ASTREA SSP', 'Systeme - ASTREA SSP'],
-    about: ['The Program - ASTREA SSP', 'Das Programm - ASTREA SSP'],
-    icarus: ['ICARUS-RLV - ASTREA SSP', 'ICARUS-RLV - ASTREA SSP'],
-    joanus: ['JOANUS - ASTREA SSP', 'JOANUS - ASTREA SSP']
+    index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
+    projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
+    about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
+    icarus: ['ICARUS-RLV | ASTREA SSP', 'ICARUS-RLV | Flugregelung und Avionik | ASTREA SSP'],
+    joanus: ['JOANUS | ASTREA SSP', 'JOANUS | Exoplanetensuche und Datenanalyse | ASTREA SSP']
   };
   const page = document.body.dataset.page;
   if (titles[page]) document.title = titles[page][lang === 'de' ? 1 : 0];
