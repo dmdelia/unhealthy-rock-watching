@@ -13,3 +13,5 @@
 .note-tags span{border-color:#4d5556}
 .note-intro,.note-result{padding-top:140px;padding-bottom:140px}
 @media(max-width:700px){.note-hero{padding:85px 24px 70px;min-height:0}.note-tests article{min-height:340px;padding:36px 24px}.note-intro,.note-result{padding:80px 24px}}
+
+.note-intro.note-intro--single,.note-result.note-result--single{grid-template-columns:minmax(0,1fr)}
