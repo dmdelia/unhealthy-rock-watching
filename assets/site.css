@@ -18,6 +18,6 @@
 .roadmap.roadmap--single,
 .roadmap.about-roadmap.about-roadmap--single,
 .detail-grid.detail-grid--single{grid-template-columns:minmax(0,1fr)}
-.index-card.index-card--clean{grid-template-columns:minmax(0,1fr)}
+
 .intro.intro--single .intro-copy,.roadmap.roadmap--single .roadmap-main{max-width:1000px}
 .detail-grid.detail-grid--single > div{max-width:860px}

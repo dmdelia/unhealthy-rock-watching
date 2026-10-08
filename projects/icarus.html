@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="de">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ICARUS-RLV ist ASTREAs Testplattform für autonome Flugregelung, Avionik, Sensorfusion, Telemetrie und die Bergung stratosphärischer Flugkörper."><title>ICARUS-RLV | Flugregelung und Avionik | ASTREA SSP</title><link rel="stylesheet" href="../assets/site.css">
-<link rel="stylesheet" href="/assets/aerospace.css"><link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/aerospace.css">
+<link rel="stylesheet" href="/assets/icarus-avionics.css"><link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="https://astreassp.de/projects/icarus">
   <meta name="robots" content="index,follow,max-snippet:-1">
   <meta property="og:type" content="website">
@@ -31,9 +32,56 @@
   </nav>
 </header>
 <main><section class="page-hero"><h1>ICARUS-RLV</h1><p data-i18n="ic_desc">Autonomer stratosphärischer Wiedereintritts-Testträger für Führung, Navigation, Regelung und Bergung.</p></section>
-<section class="as-science-visual as-flight-visual"><img src="/assets/icarus-m1-board.svg" width="1216" height="828" alt="ICARUS-M1 Avionik-Platinenentwurf" loading="lazy"><div><p data-i18n="ic_figure_note">Prototypenlayout der Flugsteuerung. Funktionen werden im Bench-Test geprüft.</p><a href="/projects/icarus-m1-avionics" data-i18n="ic_figure_link">PLATINE IM DETAIL ENTDECKEN ↗</a></div></section>
-<section class="detail-grid reveal"><aside></aside><div><h2 data-i18n="close_loop">Den Regelkreis schließen.</h2><p data-i18n="ic_long">ICARUS ist als Ende-zu-Ende-Testträger für Avionik und Flugregelung ausgelegt. Die Architektur verbindet deterministische Embedded-Software auf ESP32/FreeRTOS mit aktiver Lage- und Aerodynamikregelung, Telemetrie und einem Return-to-Launch-Konzept.</p><dl class="spec-list"><div><dt>COMPUTE</dt><dd>Dual-core ESP32 / C++ / FreeRTOS</dd></div><div><dt>CONTROL</dt><dd>RCS / Grid Fins / PID</dd></div><div><dt>RECOVERY</dt><dd>RTLS / Parachute</dd></div></dl></div></section>
-<section class="av-entry" style="padding:75px max(28px,calc((100vw - 1240px)/2));background:#101314;color:#f4f5f5"><h2 style="font-size:clamp(40px,6vw,80px);margin:22px 0" data-i18n="m1_detail_title">Im Inneren des Flugcomputers.</h2><p style="max-width:650px;color:#b2b9b9;font-size:19px" data-i18n="m1_detail_copy">Die Komponenten des M-1 Avionik-Prototyps. Platinenlayout, Flugsteuerung und unabhängige Kameranutzlast in einer interaktiven technischen Übersicht.</p><a href="/projects/icarus-m1-avionics" style="display:inline-block;border-bottom:1px solid #fff;padding:20px 0 8px;font:700 12px monospace" data-i18n="m1_detail_link">AVIONIK ENTDECKEN ↗</a></section><section class="principles"><article><span>01</span><h3 data-i18n="avionics">AVIONIK</h3><p data-i18n="avionics_copy">Deterministisches Task-Scheduling, Sensorfusion und Hardware-Interrupt-Pfade.</p></article><article><span>02</span><h3 data-i18n="gnc">GNC</h3><p data-i18n="gnc_copy">Aktive Regelungsarchitektur aus RCS und aerodynamischer Grid-Fin-Steuerung.</p></article><article><span>03</span><h3 data-i18n="science">WISSENSCHAFT</h3><p data-i18n="science_copy">Strahlungs-, Astrobiologie- und optische Nutzlasten erzeugen messbare Missionsdaten.</p></article></section>
+<section class="detail-grid detail-grid--single reveal"><div><h2 data-i18n="close_loop">Den Regelkreis schließen.</h2><p data-i18n="ic_long">ICARUS ist als Ende-zu-Ende-Testträger für Avionik und Flugregelung ausgelegt. Die Architektur verbindet deterministische Embedded-Software auf ESP32/FreeRTOS mit aktiver Lage- und Aerodynamikregelung, Telemetrie und einem Return-to-Launch-Konzept.</p><dl class="spec-list"><div><dt>COMPUTE</dt><dd>Dual-core ESP32 / C++ / FreeRTOS</dd></div><div><dt>CONTROL</dt><dd>RCS / Grid Fins / PID</dd></div><div><dt>RECOVERY</dt><dd>RTLS / Parachute</dd></div></dl></div></section>
+
+<section class="av-section" id="avionics" aria-label="ICARUS-M1 Avionik">
+  <div class="av-inner">
+    <div class="av-heading">
+      <h2 data-av="heading">Im Inneren des Flugcomputers.</h2>
+      <p data-av="intro">Sieben Baugruppen, eine Flugsteuerung. Das gezeigte ICARUS-M1 Layout ist ein Prototyp und wird in Bench-Tests validiert.</p>
+    </div>
+    <div class="av-panel" tabindex="0" aria-label="Interaktive Flugcomputer-Baugruppen">
+      <div class="av-board-scene">
+        <div class="av-board-art">
+          <img class="av-board-image" src="/assets/icarus-m1-board.svg" width="1216" height="828" loading="lazy" alt="ICARUS-M1 Prototypplatine mit ESP32, MPU-6050, Stromversorgung, Servoanschlüssen, Tasten und Buzzer">
+          <span class="av-marker" aria-hidden="true"></span>
+          <span class="av-board-glint" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="av-stage">
+        <div class="av-stage-copy" aria-live="polite" aria-atomic="true">
+          <article class="av-step is-active" data-av-step="0"><h3>ESP32 DevKit V1</h3><p>Autarker Dual-Core-Rechner für Sensorabfrage, Flugzustand, Logging und geplante Rettungsabläufe. Bis zu 240 MHz, unabhängig von der Kameranutzlast.</p></article>
+<article class="av-step" data-av-step="1" hidden><h3>MPU-6050</h3><p>Beschleunigung und Winkelgeschwindigkeit auf drei Achsen. Grundlage für Lageabschätzung und Analyse von Rotation und Turbulenzen.</p></article>
+<article class="av-step" data-av-step="2" hidden><h3>Micro BEC & XT30</h3><p>Geplante Spannungsversorgung mit Akkueingang und geregelter 5-V-Schiene für Elektronik und Aktuatoren.</p></article>
+<article class="av-step" data-av-step="3" hidden><h3>Servo-Interfaces M1-M4</h3><p>PWM-Ausgänge für die Ansteuerung von Mechanik, Lenkung und vorgesehenen Freigabefunktionen.</p></article>
+<article class="av-step" data-av-step="4" hidden><h3>U6 / U7</h3><p>Glättungskondensatoren zur Abfederung kurzzeitiger Lastspitzen. Die tatsächliche Stabilität wird erst im Bench-Test validiert.</p></article>
+<article class="av-step" data-av-step="5" hidden><h3>KEY1-KEY4</h3><p>Manuelle Eingaben für Systemchecks, Sensorkalibrierung und geplante Startvorbereitung.</p></article>
+<article class="av-step" data-av-step="6" hidden><h3>Buzzer & RGB-LEDs</h3><p>Optische und akustische Statussignale sowie vorgesehene Unterstützung bei der Bergung nach der Landung.</p></article>
+        </div>
+        <div class="av-controls">
+          <button class="av-prev" type="button" aria-label="Vorherige Baugruppe" disabled>←</button>
+          <output class="av-count" aria-live="off">1 / 7</output>
+          <button class="av-next" type="button" aria-label="Nächste Baugruppe">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="av-architecture">
+      <h2 data-av="arch-heading">Zwei Systeme. Klare Aufgaben.</h2>
+      <div class="av-architecture-grid">
+        <article>
+          <h3>ESP32 Flight Control</h3>
+          <p data-av="arch-esp">Flugsteuerung, Sensorik, lokale Datenerfassung und geplante Auslösung der Rettungssequenz. Die Flugsteuerung soll unabhängig von der Videonutzlast arbeiten und separat versorgt werden.</p>
+        </article>
+        <article>
+          <h3>Raspberry Pi Zero 2 W</h3>
+          <p data-av="arch-pi">Geplantes unabhängiges Kamerasystem mit eigenem Akku und BEC. Mehrere Videoperspektiven sind vorgesehen. Auflösung und gleichzeitige Streams müssen erst getestet werden.</p>
+        </article>
+      </div>
+      <p class="av-caution" data-av="caution">Entwicklungsstand: Konzept und Prototypenlayout. Die gezeigten Funktionen und die elektrische Trennung sind Designziele, keine bereits nachgewiesenen Flugeigenschaften.</p>
+    </div>
+  </div>
+</section>
+<section class="principles"><article><span>01</span><h3 data-i18n="avionics">AVIONIK</h3><p data-i18n="avionics_copy">Deterministisches Task-Scheduling, Sensorfusion und Hardware-Interrupt-Pfade.</p></article><article><span>02</span><h3 data-i18n="gnc">GNC</h3><p data-i18n="gnc_copy">Aktive Regelungsarchitektur aus RCS und aerodynamischer Grid-Fin-Steuerung.</p></article><article><span>03</span><h3 data-i18n="science">WISSENSCHAFT</h3><p data-i18n="science_copy">Strahlungs-, Astrobiologie- und optische Nutzlasten erzeugen messbare Missionsdaten.</p></article></section>
 <section class="statement"><h2>JOANUS</h2><a class="button button-dark" href="/projects/joanus" data-i18n="open_jo">System öffnen →</a></section></main>
 <footer class="footer"><span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span><div><a href="/projects" data-i18n="nav_projects">Systeme</a><a href="/about" data-i18n="nav_about">Das Programm</a><a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer">Discord ↗</a><a href="https://x.com/AstreaSSP" target="_blank" rel="noreferrer">X ↗</a></div></footer>
-<script src="../assets/site.js"></script></body></html>
+<script src="../assets/site.js"></script><script src="/assets/icarus-avionics.js" defer></script></body></html>
