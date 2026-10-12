@@ -23,11 +23,11 @@
 </head>
 <body data-page="karton-test">
 <header class="site-header">
-  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP home">
-    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="ASTREA SSP logo">
+  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP Startseite / Home">
+    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="">
     <span>ASTREA SSP</span>
   </a>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENÜ</button>
+  <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENÜ</button>
   <nav class="nav">
     <a href="https://astreassp.de/" data-i18n="nav_overview">Übersicht</a>
     <a class="active" href="https://astreassp.de/projects" data-i18n="nav_projects">Systeme</a>
@@ -73,7 +73,7 @@
       
       
       <h2 data-note="fit_title">Avionik im 1:1 Modell.</h2>
-      <p data-note="fit_copy">Kernpunkt des Testlaufs ist das physische Einpassen von ESP32 Flight Computer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.</p>
+      <p data-note="fit_copy">Kernpunkt des Testlaufs ist das physische geplante Einpassen von Flugcomputer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.</p>
       
     </article>
 
@@ -120,15 +120,13 @@
     <a href="/about" data-i18n="nav_about">Das Programm</a>
     <a href="https://github.com/ASTREA-SSP" target="_blank" rel="noreferrer">GitHub ↗</a>
   </div>
+  <div class="as-legal-links"><a href="/privacy" data-privacy-link>Datenschutz / Privacy</a><a href="/impressum" data-imprint-link>Impressum / Legal notice</a></div>
 </footer>
 
 <script src="/assets/site.js"></script>
 <script>
 (() => {
-  const langs = Array.isArray(navigator.languages) && navigator.languages.length
-    ? navigator.languages
-    : [navigator.language || 'de'];
-  const de = langs.some((language) => String(language).toLowerCase().startsWith('de'));
+  const de = document.documentElement.lang === 'de';
 
   const copy = de ? {
     back:'← ICARUS-RLV',
@@ -146,7 +144,7 @@
     objective_copy:'Ziel ist die direkte Validierung der Avionik-Anordnung, der Schwerpunktlage sowie der mechanischen Auslöser im maßstabsgetreuen Prototyp.',
     fit_kicker:'HARDWARE FIT',
     fit_title:'Avionik im 1:1 Modell.',
-    fit_copy:'Kernpunkt des Testlaufs ist das physische Einpassen von ESP32 Flight Computer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.',
+    fit_copy:'Kernpunkt des Testlaufs ist das physische geplante Einpassen von Flugcomputer, Akkusystem, IMU-Sensorik und SD-Modul im 1:1 Modell.',
     balance_kicker:'SCHWERPUNKTLAGE',
     balance_title:'Balance vor Steuerung.',
     balance_copy:'Besonders wichtig ist das exakte Ausmessen der Balance für eine stabile, neutrale Fluglage im freien Fall, noch bevor aktive Steuerelemente eingreifen.',
