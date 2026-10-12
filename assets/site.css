@@ -21,3 +21,18 @@
 
 .intro.intro--single .intro-copy,.roadmap.roadmap--single .roadmap-main{max-width:1000px}
 .detail-grid.detail-grid--single > div{max-width:860px}
+
+
+/* Accessibility and small-viewport resilience, October 2026 */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #00b994;outline-offset:3px}
+:where(button,a){-webkit-tap-highlight-color:transparent}
+.nav-toggle{min-height:44px;min-width:44px;cursor:pointer}
+.nav a{display:inline-flex;align-items:center;min-height:44px}
+.button{min-height:44px;justify-content:center;text-align:center}
+:where(img,svg,video,iframe){max-width:100%}
+img{height:auto}
+:where(.hero,.page-hero,.project-feature,.detail-grid,.intro,.roadmap,.footer)>*{min-width:0}
+:where(h1,h2,h3,p,a){overflow-wrap:break-word}
+@media(max-width:480px){.site-header{padding-inline:14px}.brand{gap:8px;letter-spacing:.08em}.hero,.page-hero{padding-inline:20px}.hero-actions{flex-wrap:wrap;gap:16px}.hero h1{font-size:clamp(38px,12vw,58px)}.hero-stage,.hero-graphic{max-height:320px}.footer{padding-inline:20px}}
+@media(max-width:320px){.brand span{font-size:11px}.nav-toggle{font-size:10px}.hero h1{font-size:36px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
