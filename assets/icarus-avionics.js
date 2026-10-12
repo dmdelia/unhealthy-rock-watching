@@ -29,7 +29,7 @@
   ];
   const copyEn = {
     heading:'Inside the flight computer.',
-    intro:'Seven hardware groups, one flight controller. The ICARUS-M1 board shown is a prototype design and awaits bench validation.',
+    intro:'Seven planned hardware groups, one flight controller design. The IMU has not yet been obtained or integrated. Bench validation is pending.',
     'arch-heading':'Two systems. Separate responsibilities.',
     'arch-esp':'Flight control, sensor input, onboard logging and planned recovery activation. The flight controller is designed to operate independently of the video payload with a separate power supply.',
     'arch-pi':'Planned independent camera system with its own battery and voltage regulator. Multiple video angles are the target. Resolutions and simultaneous streams still require testing.',
