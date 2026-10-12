@@ -167,6 +167,10 @@
 
   const titles = {
     privacy: ['Privacy Policy | ASTREA SSP', 'Datenschutzerklärung | ASTREA SSP'],
+    impressum: ['Legal Notice | ASTREA SSP', 'Impressum | ASTREA SSP'],
+    support: ['Support ASTREA SSP | Hardware & Memberships', 'ASTREA SSP unterstützen | Hardware & Mitgliedschaft'],
+    'support-hardware': ['Support ASTREA Hardware | ASTREA SSP', 'Hardware für ASTREA unterstützen | ASTREA SSP'],
+    'support-member': ['ASTREA Membership | ASTREA SSP', 'ASTREA Mitgliedschaft | ASTREA SSP'],
     index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
     projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
     about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
