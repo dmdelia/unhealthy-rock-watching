@@ -13,3 +13,5 @@
 .support-buybox{background:#111719}.support-buy-label{color:#bad2cb}
 @media(max-width:900px){.support-product-card{border-right:0}.support-top{padding-top:75px}}
 @media(max-width:700px){.support-top{padding:70px 24px 36px}.support-products{padding:0 24px 30px}.support-product-card{padding:34px 22px}.support-detail{padding:35px 24px 90px}}
+
+.as-support-terms{max-width:930px;margin:24px auto 60px;padding:22px 25px;border-top:1px solid currentColor;font-size:14px;line-height:1.75;opacity:.9}
