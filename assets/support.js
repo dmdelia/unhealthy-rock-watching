@@ -1,5 +1,5 @@
 (() => {
-  const isGerman=(navigator.languages||[navigator.language||'en']).some(l=>String(l).toLowerCase().startsWith('de'));
+  const isGerman=document.documentElement.lang==='de';
   const t=isGerman?{
     title:'ASTREA unterstützen.',
     lead:'Wähle direkt, was du unterstützen willst. Der Checkout läuft über Patreon.',
