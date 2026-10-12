@@ -144,9 +144,17 @@
   if (titles[page]) document.title = titles[page][lang === 'de' ? 1 : 0];
 
   navToggle?.setAttribute('aria-label', t.open_nav);
+  navToggle?.setAttribute('aria-controls', 'astrea-primary-navigation');
+  if (nav) nav.id = 'astrea-primary-navigation';
   navToggle?.addEventListener('click', () => {
     const open = nav?.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(Boolean(open)));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !nav?.classList.contains('is-open')) return;
+    nav.classList.remove('is-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navToggle?.focus();
   });
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
     nav?.classList.remove('is-open');
