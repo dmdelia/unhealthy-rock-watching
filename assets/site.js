@@ -7,7 +7,9 @@
     ? navigator.languages
     : [navigator.language || 'en'];
   const isGerman = preferredLanguages.some((language) => String(language).toLowerCase().startsWith('de'));
-  const lang = isGerman ? 'de' : 'en';
+  let preference = null;
+  try { preference = localStorage.getItem('astrea-language'); } catch (_) { /* storage unavailable */ }
+  const lang = preference === 'de' || preference === 'en' ? preference : (isGerman ? 'de' : 'en');
   root.lang = lang;
 
   const translations = {
@@ -29,7 +31,7 @@
       data:'DATA', method:'METHOD', output:'OUTPUT', roadmap_title:'From bench testing<br>to near-space flight.',
       phase0:'PHASE 0 / CURRENT', phase1:'PHASE 1 / PLANNED', phase2:'PHASE 2 / PLANNED', phase3:'PHASE 3 / LONG TERM',
       arch:'Architecture & Bench', drops:'Local Drop Tests', strato:'Stratospheric Mission', pinnacle:'High-Altitude Pinnacle',
-      phase0copy:'Flight software, sensor fusion, hardware interrupts and pipeline modularization.',
+      phase0copy:'Flight software architecture, planned sensor fusion, hardware interrupt paths and pipeline modularization. Hardware integration is not yet verified.',
       phase1copy:'Controlled 1,000 m drops to validate flight state machines, grid fins and recovery.',
       phase2copy:'Targeting up to approximately 35 km with the full science payload.',
       phase3copy:'Targeting approximately 40 km and ultra-thin atmospheric conditions.',
@@ -86,7 +88,7 @@
       data:'DATEN', method:'METHODE', output:'AUSGABE', roadmap_title:'Vom Bench-Test<br>bis zum Near-Space-Flug.',
       phase0:'PHASE 0 / AKTUELL', phase1:'PHASE 1 / GEPLANT', phase2:'PHASE 2 / GEPLANT', phase3:'PHASE 3 / LANGFRISTIG',
       arch:'Architektur & Bench', drops:'Lokale Falltests', strato:'Stratosphärenmission', pinnacle:'Höhenflug',
-      phase0copy:'Flugsoftware, Sensorfusion, Hardware-Interrupts und Modularisierung der Datenpipeline.',
+      phase0copy:'Flugsoftware-Architektur, geplante Sensorfusion, Hardware-Interrupt-Pfade und Modularisierung der Datenpipeline. Die Hardwareintegration ist noch nicht nachgewiesen.',
       phase1copy:'Kontrollierte Abwürfe aus 1.000 m zur Validierung von Flugzuständen, Grid Fins und Bergung.',
       phase2copy:'Zielbereich bis etwa 35 km mit vollständiger wissenschaftlicher Nutzlast.',
       phase3copy:'Zielbereich etwa 40 km unter Bedingungen extrem dünner Atmosphäre.',
@@ -127,6 +129,36 @@
     }
   };
 
+  // Manual language choice applies to this origin; no tracking is performed.
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const switcher = document.createElement('div');
+    switcher.className = 'as-language-switch';
+    switcher.setAttribute('role', 'group');
+    switcher.setAttribute('aria-label', lang === 'de' ? 'Sprache wählen' : 'Select language');
+    for (const code of ['de', 'en']) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = code.toUpperCase();
+      button.lang = code;
+      button.setAttribute('aria-pressed', String(lang === code));
+      button.setAttribute('aria-label', code === 'de' ? 'Deutsch' : 'English');
+      button.addEventListener('click', () => {
+        try { localStorage.setItem('astrea-language', code); } catch (_) { /* storage unavailable */ }
+        document.documentElement.lang = code;
+        window.location.reload();
+      });
+      switcher.appendChild(button);
+    }
+    header.appendChild(switcher);
+  }
+  if (lang === 'en' && document.querySelector('main') && !document.querySelector('.as-language-note')) {
+    const note = document.createElement('p');
+    note.className = 'as-language-note';
+    note.innerHTML = 'ASTREA currently publishes mainly in German. International visitors are welcome. <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noopener noreferrer">Join our Discord community ↗</a>';
+    document.querySelector('main').prepend(note);
+  }
+
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
@@ -134,6 +166,7 @@
   });
 
   const titles = {
+    privacy: ['Privacy Policy | ASTREA SSP', 'Datenschutzerklärung | ASTREA SSP'],
     index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
     projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
     about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
