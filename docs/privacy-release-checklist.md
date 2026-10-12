@@ -21,7 +21,7 @@
 - [ ] Live network and storage inspection for BOTH domains, including GitHub, Cloudflare, YouTube activation.
 - [ ] Verify GitHub, Cloudflare and IONOS agreements, recipient roles, transfers and retention information.
 - [ ] Confirm actual E2E encrypted contact procedure before promising it.
-- [ ] Verify Patagonia/Patreon member-data flows and tier consent fulfillment in Discord.
+- [ ] Verify Patreon member-data flows and tier consent fulfillment in Discord.
 - [ ] Legal review of bilingual policy against actual deployed behavior; remove noindex only when approved if desired.
 
 ## Ticket bot requirements (separate codebase, not in these websites)
