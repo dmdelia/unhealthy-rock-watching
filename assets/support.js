@@ -19,6 +19,7 @@
     member_item_1:'Wiederkehrender Programmsupport',
     member_item_2:'Direkt über Patreon verwaltet',
     member_item_3:'Aktueller Preis und Vorteile werden vor dem Beitritt angezeigt',
+    terms_note:'Mitgliedschaftsvorteile werden über Patreon verwaltet und müssen im Discord-Ticket angefordert werden. Öffentliche Namen/Handles nur nach ausdrücklicher Freigabe. Hardwarebeschriftungen sind für geeignete Missionen während aktiver Mitgliedschaft vorgesehen, ohne Garantie eines bestimmten Flugdatums. Abstimmungen betreffen nur ausgewählte nicht sicherheitskritische Optionen; Sicherheits- und Rechtsentscheidungen verbleiben bei ASTREA. Preise, Kündigung und mögliche Erstattungen richten sich nach den beim Abschluss geltenden Patreon-Bedingungen.',
     details:'DETAILS →'
   }:{
     title:'Support ASTREA.',
@@ -39,6 +40,7 @@
     member_item_1:'Recurring program support',
     member_item_2:'Managed directly through Patreon',
     member_item_3:'Current price and benefits shown before joining',
+    terms_note:'Membership benefits are managed through Patreon and claimed via Discord tickets. Names or handles are made public only after separate explicit approval. Hardware recognition is intended for suitable missions during active memberships; no flight date is guaranteed. Votes apply only to selected non-safety-critical options; ASTREA retains safety and legal decisions. Pricing, cancellation and any refunds are governed by the Patreon terms displayed at checkout.',
     details:'DETAILS →'
   };
   document.documentElement.lang=isGerman?'de':'en';
