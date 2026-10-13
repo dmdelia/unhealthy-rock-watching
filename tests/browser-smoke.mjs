@@ -38,7 +38,11 @@ try {
           const culprits = await page.evaluate(() => [...document.querySelectorAll('body *')]
             .filter(el => { const r=el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed'; })
             .slice(0, 12).map(el => el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 60) + ' "' + el.textContent.trim().slice(0, 30) + '"'));
-          assert.fail(`${locale} ${width} ${path}: horizontal overflow ${overflow}px; offenders: ${culprits.join(' / ')}`);
+          const innerOverflows = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(el => {
+            return el.scrollWidth - el.clientWidth > 3 && getComputedStyle(el).overflowX === 'visible';
+          }).sort((a,b) => (b.scrollWidth - b.clientWidth) - (a.scrollWidth - a.clientWidth))
+            .slice(0,12).map(el => `${el.tagName}.${String(el.className).slice(0,36)}: scroll ${el.scrollWidth} client ${el.clientWidth} : ${el.textContent.trim().slice(0,28)}`));
+          assert.fail(`${locale} ${width} ${path}: horizontal overflow ${overflow}px; bounding: ${culprits.join(' / ')}; scroll: ${innerOverflows.join(' / ')}`);
         }
         checks += 1;
       }
