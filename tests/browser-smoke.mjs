@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { mkdirSync } from 'node:fs';
 import { chromium } from 'playwright';
 
 const ORIGIN = 'http://127.0.0.1:8765';
@@ -58,12 +59,24 @@ try {
   await page.goto(ORIGIN + '/about.html');
   assert.match(await page.locator('[data-i18n="contact_title"]').innerText(), /Technical exchange/);
   assert.match(await page.locator('.as-contact-email').getAttribute('href'), /^mailto:contact@astreassp[.]de/);
+  mkdirSync('qa-screenshots', {recursive:true});
+  await page.goto(ORIGIN + '/index.html');
+  await page.screenshot({ path:'qa-screenshots/astrea-home-english-desktop.png', fullPage:true });
+  await page.goto(ORIGIN + '/about.html');
+  await page.screenshot({ path:'qa-screenshots/astrea-about-english-desktop.png', fullPage:true });
   await page.goto(ORIGIN + '/privacy.html');
   assert.match(await page.locator('.as-en h1').innerText(), /Privacy Policy/);
   assert.equal(await page.locator('.as-de').isVisible(), false);
   await page.goto(ORIGIN + '/404.html');
   assert.match(await page.locator('[data-404="title"]').innerText(), /Hello stranger/);
   await context.close();
+  const mobile = await browser.newContext({locale:'de-DE',viewport:{width:375,height:850},reducedMotion:'reduce'});
+  const mobilePage = await mobile.newPage();
+  await mobilePage.goto(ORIGIN + '/index.html');
+  await mobilePage.screenshot({path:'qa-screenshots/astrea-home-german-mobile.png',fullPage:true});
+  await mobilePage.goto(ORIGIN + '/about.html');
+  await mobilePage.screenshot({path:'qa-screenshots/astrea-about-german-mobile.png',fullPage:true});
+  await mobile.close();
   console.log(`PASS: ${checks} desktop/mobile page renders + manual language / support / legal / 404 translations`);
 } finally {
   await browser.close();
