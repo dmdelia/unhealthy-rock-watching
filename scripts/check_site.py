@@ -8,7 +8,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [
-    "index.html", "about.html", "projects.html", "projects/icarus.html",
+    "index.html", "about.html", "research.html", "projects.html", "projects/icarus.html",
     "projects/joanus.html", "n/karton-test.html", "404.html",
     "support/index.html", "support/hardware.html", "support/member.html",
     "privacy.html",
@@ -45,6 +45,12 @@ def main() -> int:
                 errors.append(f"{name}: missing privacy link")
         if 'href="/impressum"' in html:
             errors.append(f"{name}: unfinished imprint unexpectedly linked")
+    research = (ROOT / "research.html").read_text(encoding="utf-8")
+    if 'class="as-de"' not in research or 'class="as-en"' not in research:
+        errors.append("academic profile must be bilingual")
+    for file_name in ["index.html", "about.html"]:
+        if 'href="/research"' not in (ROOT / file_name).read_text(encoding="utf-8"):
+            errors.append(f"{file_name}: academic profile link missing")
     js = (ROOT / "assets/site.js").read_text(encoding="utf-8")
     if "astrea-language" not in js:
         errors.append("manual language preference missing")
