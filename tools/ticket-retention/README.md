@@ -3,7 +3,7 @@
 This is a **standalone reference utility**, not the Discord bot itself. It is designed for the private home server. Nothing is uploaded to the website and no real transcripts are checked into GitHub.
 
 ## Policy
-- Closed Discord ticket conversations are stored as private \`.txt\` files.
+- Closed Discord ticket conversations are stored as private `.txt` files.
 - Full conversations: **90 days after ticket closure**, measured from explicit closure timestamp, not filesystem modification time.
 - Concrete legal/statutory exceptions require a written reason, specific basis and **finite expiry**.
 - This utility defaults to a dry run and deletes **only files registered by the bot**.
@@ -14,7 +14,7 @@ This is a **standalone reference utility**, not the Discord bot itself. It is de
 
 Install this Python file on the private server (Python 3.11+, no additional packages). Example paths and IDs below are placeholders, not real user data:
 
-\`\`\`bash
+```bash
 # Immediately after the bot closes a ticket and finishes writing the .txt:
 python3 ticket_retention.py register --root /srv/astrea/tickets --ticket 123456789 --file ticket-123456789.txt --closed-at 2026-10-13T10:00:00+02:00
 
@@ -29,16 +29,16 @@ python3 ticket_retention.py hold --root /srv/astrea/tickets --ticket 123456789 -
 
 # Remove the hold once it is no longer necessary:
 python3 ticket_retention.py release --root /srv/astrea/tickets --ticket 123456789
-\`\`\`
+```
 
 Daily cron example **for the home server**, not GitHub Pages:
 
-\`\`\`cron
+```cron
 0 3 * * * /usr/bin/python3 /opt/astrea/ticket_retention.py sweep --root /srv/astrea/tickets --apply
-\`\`\`
+```
 
 ## Operational requirements before using --apply
-- [ ] Locate the real Discord bot code and integrate \`register\` after TXT output finishes; ensure accurate ticket IDs and closure timestamps.
+- [ ] Locate the real Discord bot code and integrate `register` after TXT output finishes; ensure accurate ticket IDs and closure timestamps.
 - [ ] Verify the TXT root directory, rights (service account only), encryption and server updates.
 - [ ] Test closure and dry-run with real bot **test tickets**, including an expired test TXT.
 - [ ] Set up daily scheduled cleanup, error alerting, access logs and exception review.
@@ -49,6 +49,6 @@ Daily cron example **for the home server**, not GitHub Pages:
 - [ ] Review actual legal requirements and deployed policy before claiming compliance.
 
 ## Tests
-\`\`\`bash
+```bash
 python3 -m unittest discover -s tools/ticket-retention/tests -v
-\`\`\`
+```
