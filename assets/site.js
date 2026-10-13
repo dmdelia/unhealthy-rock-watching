@@ -188,7 +188,7 @@
     index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
     projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
     about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
-    research: ['Research and Technical Exchange | ASTREA SSP', 'Forschung und fachlicher Austausch | ASTREA SSP']
+    research: ['Research and Technical Exchange | ASTREA SSP', 'Forschung und fachlicher Austausch | ASTREA SSP'],
     icarus: ['ICARUS-RLV | ASTREA SSP', 'ICARUS-RLV | Flugregelung und Avionik | ASTREA SSP'],
     joanus: ['JOANUS | ASTREA SSP', 'JOANUS | Exoplanetensuche und Datenanalyse | ASTREA SSP']
   };
