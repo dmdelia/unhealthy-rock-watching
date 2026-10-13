@@ -163,3 +163,8 @@ html[lang="de"] .as-en,html[lang="en"] .as-de{display:none!important}
   .hero-stage{right:0;width:100%;max-width:100%;transform:none;overflow:hidden}
   .hero-stage .esp32-photo{width:90%;max-width:90%;transform:none}
 }
+
+@media(max-width:400px){
+  .hero h1{font-size:clamp(43px,13.5vw,57px);overflow-wrap:anywhere}
+  .hero-lead{font-size:15px}
+}
