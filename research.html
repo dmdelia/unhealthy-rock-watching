@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Technischer Überblick für Forschung und Lehre: Entwicklungsstand, Methoden und Möglichkeiten zum fachlichen Austausch mit ASTREA SSP.">
+  <title>Forschung und fachlicher Austausch | ASTREA SSP</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/aerospace.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://astreassp.de/research">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="ASTREA SSP">
+  <meta property="og:title" content="Forschung und fachlicher Austausch | ASTREA SSP">
+  <meta property="og:description" content="Entwicklungsstand von ICARUS-RLV und JOANUS, technische Methoden und Kontakt für Forschung und Lehre.">
+  <meta property="og:url" content="https://astreassp.de/research">
+  <meta property="og:image" content="https://astreassp.de/logo.png">
+  <meta name="twitter:card" content="summary">
+</head>
+<body data-page="research">
+<header class="site-header">
+  <a class="brand" href="/" aria-label="ASTREA SSP Startseite / Home"><img class="brand-logo" src="/logo.png" alt=""><span>ASTREA SSP</span></a>
+  <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENÜ</button>
+  <nav class="nav">
+    <a href="/" data-i18n="nav_overview">Übersicht</a>
+    <a href="/projects" data-i18n="nav_projects">Systeme</a>
+    <a class="active" href="/about" data-i18n="nav_about">Das Programm</a>
+    <a href="https://watch.astreassp.de/" data-i18n="nav_watch">Watch</a>
+    <a href="/support">Support</a>
+    <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noopener noreferrer" data-i18n="nav_discord">Discord ↗</a>
+    <a class="nav-github" href="https://github.com/ASTREA-SSP" target="_blank" rel="noopener noreferrer" data-i18n="nav_github">GitHub ↗</a>
+  </nav>
+</header>
+<main>
+  <div class="as-de" lang="de">
+    <section class="page-hero as-research-hero">
+      <h1>Technische Arbeit.<br>Offen für Austausch.</h1>
+      <p>ASTREA SSP ist ein unabhängig entwickeltes Raumfahrt- und Softwareprojekt. Diese Seite erläutert den tatsächlichen Stand der Arbeiten, die eingesetzten Methoden und die Themen, zu denen fachliche Rückmeldungen willkommen sind.</p>
+    </section>
+    <section class="as-research-section">
+      <div class="as-research-intro">
+        <h2>Hintergrund und Arbeitsweise.</h2>
+        <p>Parallel zu meiner IT-Ausbildung entwickle ich ASTREA SSP eigenständig weiter. Im Anschluss plane ich ein Bachelorstudium in Technischer Informatik. Der Schwerpunkt liegt auf eingebetteten Systemen, Softwarearchitektur, Messbarkeit und wissenschaftlich nachvollziehbarer Auswertung.</p>
+        <p>Die Entwicklung erfolgt schrittweise: Anforderungen und Systemgrenzen definieren, Prototypen und Software entwickeln, mit geeigneten Tests überprüfen und Ergebnisse dokumentieren. Konzepte und geplante Versuche werden ausdrücklich nicht als abgeschlossene Ergebnisse dargestellt.</p>
+      </div>
+      <div class="as-research-grid">
+        <article class="as-research-card">
+          <div class="as-research-card-top"><h3>ICARUS-RLV</h3><span>Konzept und Prototypenentwicklung</span></div>
+          <p>Autonomes Flughardware-Testsystem mit Fokus auf Avionik, Sensorik, Flugzustandsbestimmung, Regelung, Telemetrie und Bergung. Für ICARUS-M1 liegt ein konzeptionelles Platinenlayout vor.</p>
+          <dl>
+            <div><dt>Technischer Schwerpunkt</dt><dd>ESP32, C++, FreeRTOS, geplante IMU-Integration und Aktuatoransteuerung</dd></div>
+            <div><dt>Nachgewiesener Stand</dt><dd>Architektur und Layout dokumentiert. Die IMU ist noch nicht integriert; eine durchgängige Bench- oder Flugvalidierung ist nicht nachgewiesen.</dd></div>
+            <div><dt>Nächste Schritte</dt><dd>Komponenten integrieren, Versorgung und Sensorik prüfen, Datenaufzeichnung und Regelpfade im Bench-Test validieren</dd></div>
+          </dl>
+          <a href="/projects/icarus#avionics">Avionik und Designstand ansehen ↗</a>
+        </article>
+        <article class="as-research-card">
+          <div class="as-research-card-top"><h3>JOANUS</h3><span>Softwareentwicklung und Validierung</span></div>
+          <p>Softwarebasierte Auswertung öffentlich verfügbarer Weltraumteleskop-Photometrie mit dem Ziel, periodische Transitkandidaten reproduzierbar zu suchen und systematisch auf mögliche Fehlinterpretationen zu prüfen.</p>
+          <dl>
+            <div><dt>Technischer Schwerpunkt</dt><dd>Python, relative Photometrie, Box Least Squares, Kandidatenfilterung und strukturierte Ausgaben</dd></div>
+            <div><dt>Nachgewiesener Stand</dt><dd>Öffentliches Entwicklungsrepository vorhanden. Eine unabhängig bestätigte Exoplanetenentdeckung wird nicht beansprucht.</dd></div>
+            <div><dt>Nächste Schritte</dt><dd>Tests mit Referenzdaten, Validierungsmetriken, robuste Fehlerbehandlung und dokumentierte Vergleichsverfahren</dd></div>
+          </dl>
+          <a href="https://github.com/ASTREA-SSP/joanus" target="_blank" rel="noopener noreferrer">JOANUS Quellcode ansehen ↗</a>
+        </article>
+      </div>
+    </section>
+    <section class="as-research-process">
+      <div class="as-research-process-inner">
+        <h2>Worauf es bei der Entwicklung ankommt.</h2>
+        <div class="as-research-steps">
+          <article><span>01</span><h3>Abgrenzung</h3><p>Dokumentation unterscheidet Ziele, Entwurf, Umsetzung und tatsächlich getestete Funktionen.</p></article>
+          <article><span>02</span><h3>Prüfbarkeit</h3><p>Bench-Messungen und Testdaten sollen Aussagen zu Timing, Stabilität, Signalqualität und Zuverlässigkeit ermöglichen.</p></article>
+          <article><span>03</span><h3>Iteration</h3><p>Ergebnisse und Fehler fließen in nachvollziehbare Änderungen an Architektur und Implementierung zurück.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="as-contact-section" aria-labelledby="research-contact-de">
+      <div class="as-contact-inner">
+        <h2 id="research-contact-de">Fachlicher Austausch mit Forschung und Lehre.</h2>
+        <p>Besonders hilfreich wären Rückmeldungen zu Embedded-Architekturen, Testmethodik, Regelungstechnik und astrophysikalischer Datenanalyse. Ebenso interessieren mich geeignete Nachwuchsangebote, öffentliche Fachveranstaltungen und mögliche Anknüpfungspunkte für ein späteres Studium.</p>
+        <p>Gesucht wird zunächst ein fachlicher Austausch, keine bestehende oder bereits zugesagte institutionelle Zusammenarbeit.</p>
+        <a class="as-contact-email" href="mailto:contact@astreassp.de?subject=ASTREA%20SSP%20-%20Fachlicher%20Austausch">contact@astreassp.de ↗</a>
+        <p class="as-contact-note">ASTREA SSP ist ein unabhängiges Entwicklungsprojekt. Alle geplanten Flugversuche unterliegen gesonderter technischer, organisatorischer und rechtlicher Prüfung.</p>
+      </div>
+    </section>
+  </div>
+  <div class="as-en" lang="en">
+    <section class="page-hero as-research-hero">
+      <h1>Engineering in progress.<br>Open to discussion.</h1>
+      <p>ASTREA SSP is an independently developed aerospace and software project. This page explains the current state of development, working methods and topics where technical feedback would be valuable.</p>
+    </section>
+    <section class="as-research-section">
+      <div class="as-research-intro">
+        <h2>Background and approach.</h2>
+        <p>I develop ASTREA SSP alongside my IT vocational training and plan to pursue a bachelor's degree in technical computer science afterwards. My focus is on embedded systems, software architecture, measurable results and reproducible scientific analysis.</p>
+        <p>Work proceeds in stages: define requirements and boundaries, implement prototypes and software, evaluate them through suitable tests and document the findings. Design goals and planned experiments are not represented as completed achievements.</p>
+      </div>
+      <div class="as-research-grid">
+        <article class="as-research-card">
+          <div class="as-research-card-top"><h3>ICARUS-RLV</h3><span>Concept and prototype design</span></div>
+          <p>Autonomous flight hardware testbed focused on avionics, sensors, flight-state estimation, control, telemetry and recovery. A conceptual board layout for ICARUS-M1 is documented.</p>
+          <dl>
+            <div><dt>Technical focus</dt><dd>ESP32, C++, FreeRTOS, planned IMU integration and actuator control</dd></div>
+            <div><dt>Verified status</dt><dd>Architecture and layout documented. The IMU has not been integrated; complete bench or flight validation has not been demonstrated.</dd></div>
+            <div><dt>Next steps</dt><dd>Integrate components; evaluate power and sensors; bench-test data logging and control paths</dd></div>
+          </dl>
+          <a href="/projects/icarus#avionics">Explore the avionics design ↗</a>
+        </article>
+        <article class="as-research-card">
+          <div class="as-research-card-top"><h3>JOANUS</h3><span>Software development and validation</span></div>
+          <p>Software for analysing public space telescope photometry, with the goal of reproducibly identifying periodic transit candidates and systematically screening possible false positives.</p>
+          <dl>
+            <div><dt>Technical focus</dt><dd>Python, relative photometry, Box Least Squares, candidate filtering and structured output</dd></div>
+            <div><dt>Verified status</dt><dd>A public development repository is available. No independently confirmed exoplanet discovery is claimed.</dd></div>
+            <div><dt>Next steps</dt><dd>Reference dataset testing, validation metrics, robust error handling and documented comparisons</dd></div>
+          </dl>
+          <a href="https://github.com/ASTREA-SSP/joanus" target="_blank" rel="noopener noreferrer">View JOANUS source code ↗</a>
+        </article>
+      </div>
+    </section>
+    <section class="as-research-process">
+      <div class="as-research-process-inner">
+        <h2>Engineering priorities.</h2>
+        <div class="as-research-steps">
+          <article><span>01</span><h3>Clear scope</h3><p>Documentation distinguishes goals, designs, implementations and functions that have actually been tested.</p></article>
+          <article><span>02</span><h3>Testability</h3><p>Bench measurements and test data should support claims about timing, stability, signal quality and reliability.</p></article>
+          <article><span>03</span><h3>Iteration</h3><p>Results and failures feed into traceable changes to the system architecture and implementation.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="as-contact-section" aria-labelledby="research-contact-en">
+      <div class="as-contact-inner">
+        <h2 id="research-contact-en">Technical dialogue with researchers and educators.</h2>
+        <p>I would welcome feedback on embedded architectures, test methodology, control systems and astrophysical data analysis. I am also interested in early-career learning opportunities, public technical events and future opportunities related to university study.</p>
+        <p>The immediate objective is technical dialogue, not a claim of an existing or agreed institutional collaboration.</p>
+        <a class="as-contact-email" href="mailto:contact@astreassp.de?subject=ASTREA%20SSP%20-%20Technical%20exchange">contact@astreassp.de ↗</a>
+        <p class="as-contact-note">ASTREA SSP is an independent development project. All proposed flight tests require separate technical, organizational and legal assessment.</p>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span>
+  <div><a href="/" data-i18n="nav_overview">Übersicht</a><a href="/projects" data-i18n="nav_projects">Systeme</a><a href="/about" data-i18n="nav_about">Das Programm</a><a href="https://github.com/ASTREA-SSP" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+  <div class="as-legal-links"><a href="/privacy" data-privacy-link>Datenschutz / Privacy</a></div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
