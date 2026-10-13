@@ -1,3 +1,4 @@
+@import url("/assets/brand.css");
 /* ASTREA visual system v4 | aerospace editorial, no synthetic interface chrome */
 :root{--accent:#6ac8bd;--paper:#e9eae7;--black:#07090b;--line:#cacdc9;--dark-line:#33383b}
 html{scroll-padding-top:72px}

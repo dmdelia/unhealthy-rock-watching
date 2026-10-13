@@ -1,0 +1,15 @@
+/* Shared ASTREA SSP brand and navigation. Hosted by astreassp.de and consumed by WATCH. */
+:root{--accent:#6ac8bd}
+.site-header{height:70px;padding:0 max(24px,calc((100vw - 1500px)/2));display:flex;align-items:center;justify-content:space-between;background:#090b0dee;color:#fff;border-bottom:1px solid #272b2f;position:sticky;top:0;z-index:40;backdrop-filter:blur(16px)}
+.site-header .brand{display:flex;align-items:center;gap:13px;font:800 13px/1 Arial,Helvetica,sans-serif;letter-spacing:.18em;color:#fff;text-decoration:none;white-space:nowrap}
+.site-header .brand-logo{width:32px;height:32px;object-fit:contain}
+.site-header .nav{display:flex;align-items:center;gap:clamp(12px,2vw,30px);font-family:Arial,Helvetica,sans-serif}
+.site-header .nav a{font:700 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#fff;opacity:.64;text-decoration:none;transition:opacity .2s}
+.site-header .nav a.active,.site-header .nav a:hover{opacity:1}
+.site-header .nav-github{color:#fff!important}
+.site-header .nav-toggle{display:none;background:transparent;color:#fff;border:0;font:700 11px Arial,Helvetica,sans-serif;cursor:pointer}
+.site-header .as-language-switch,.site-header .language-switch{display:flex;align-items:center;gap:3px;margin-left:12px;flex:none}
+.site-header .as-language-switch button,.site-header .language-switch button{background:transparent;border:1px solid #626b6f;color:#edf3f1;padding:7px 9px;font:700 11px Arial,Helvetica,sans-serif;cursor:pointer}
+.site-header .as-language-switch button[aria-pressed="true"],.site-header .language-switch button[aria-pressed="true"]{background:#edf3f1;color:#080a0c}
+@media(max-width:1050px){.site-header .nav-toggle{display:block}.site-header .nav{position:absolute;top:70px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:#090b0d;padding:12px 24px 22px;border-bottom:1px solid #272b2f}.site-header .nav.open{display:flex}.site-header .nav a{padding:12px 0}.site-header .as-language-switch,.site-header .language-switch{margin-left:auto;margin-right:14px}}
+@media(max-width:700px){.site-header{padding:0 18px}.site-header .brand{font-size:12px;letter-spacing:.12em}.site-header .nav{padding:12px 18px 22px}}
