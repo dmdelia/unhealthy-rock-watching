@@ -141,3 +141,7 @@ html[lang="de"] .as-en,html[lang="en"] .as-de{display:none!important}
 .as-legal-links{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 .as-legal-links a{color:#e7eceb;font:700 11px/1.5 Arial,sans-serif;text-transform:none;letter-spacing:.02em}
 .patreon-wordmark{font:bold 16px/1.2 Arial,sans-serif;letter-spacing:-.025em}
+
+/* Long German legal headings and identifiers must wrap on narrow screens. */
+.as-legal h1,.as-legal h2{overflow-wrap:anywhere;hyphens:auto}
+.as-legal section{min-width:0;overflow-wrap:break-word}
