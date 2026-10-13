@@ -15,3 +15,11 @@
 @media(max-width:700px){.support-top{padding:70px 24px 36px}.support-products{padding:0 24px 30px}.support-product-card{padding:34px 22px}.support-detail{padding:35px 24px 90px}}
 
 .as-support-terms{max-width:930px;margin:24px auto 60px;padding:22px 25px;border-top:1px solid currentColor;font-size:14px;line-height:1.75;opacity:.9}
+
+/* Mobile typography must never cause horizontal page scrolling. */
+@media(max-width:700px){
+  .support-top h1{font-size:clamp(44px,11vw,68px);overflow-wrap:anywhere}
+  .support-product-card h2{font-size:clamp(38px,9vw,58px);overflow-wrap:break-word}
+  .support-single-copy h1{overflow-wrap:anywhere}
+  .support-single,.support-product-card,.support-single-copy{min-width:0}
+}
