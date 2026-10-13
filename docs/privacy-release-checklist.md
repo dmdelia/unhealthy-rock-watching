@@ -1,6 +1,6 @@
 # ASTREA SSP privacy and release checklist (draft)
 
-**Do not merge this PR as a legally complete deployment until the outstanding obligations below are resolved.** No residence address may be committed without an explicit decision. A placeholder does not satisfy a mandatory imprint obligation.
+**Release warning:** The incomplete legal notice is withheld from the website; the original draft remains on branch `legal/imprint-draft-2026-10`. This does **not** eliminate German provider-identification obligations, especially while Patreon support is promoted. Publication without a legally adequate notice may expose the operator to legal risk. Do not present this release as legally compliant. Never invent or commit a home address without an explicit decision.
 
 ## Confirmed
 - Website operator: individual, name included in working draft; legally valid service address not yet available.
@@ -25,7 +25,7 @@
 - [ ] Legal review of bilingual policy against actual deployed behavior; remove noindex only when approved if desired.
 
 ## Technical work completed in these branches
-- [x] Bilingual draft privacy policy and intentionally incomplete imprint page linked from the site.
+- [x] Bilingual privacy information linked from the site; incomplete imprint page **removed from deploy branch and navigation**. Original draft preserved separately.
 - [x] Both language controls and language-specific supporter copy.
 - [x] A professional academic/technical contact section on /about, without suggesting an existing university partnership.
 - [x] Accessibility skip links, keyboard Escape navigation, focus styling, reduced-motion behavior.
@@ -48,5 +48,5 @@
 - [x] Browser-tested: video playback requires intentional activation and informs about external processing.
 - [x] Browser-tested: Escape close and focus restoration. [ ] Complete manual screen reader assessment.
 - [x] Chromium checks cover language selection, browser fallback, reduced-motion and 320/375/768/1024/1366/1920px layout.
-- [x] Automated checks cover legal links and image alt attributes. [ ] Human visual/contrast review remains.
+- [x] Automated checks cover privacy links, withheld imprint and image alt attributes. [ ] Human visual/contrast review remains.
 - [ ] Test robots/sitemap/canonical/noindex, error/404 routes and YouTube synchronization.
