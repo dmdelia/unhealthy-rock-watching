@@ -161,6 +161,18 @@
     document.querySelector('main').prepend(note);
   }
 
+  // Keyboard users can bypass the shared header on every ASTREA page.
+  const mainLandmark = document.querySelector('main');
+  if (mainLandmark) {
+    mainLandmark.id ||= 'main-content';
+    mainLandmark.setAttribute('tabindex','-1');
+    const skip = document.createElement('a');
+    skip.className = 'as-skip-link';
+    skip.href = '#main-content';
+    skip.textContent = lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content';
+    document.body.prepend(skip);
+  }
+
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
@@ -191,6 +203,13 @@
     nav?.classList.remove('is-open');
     navToggle?.setAttribute('aria-expanded', 'false');
   }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      navToggle?.setAttribute('aria-expanded','false');
+      navToggle?.focus();
+    }
+  });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const reveal = document.querySelectorAll('.reveal');
