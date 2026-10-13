@@ -168,3 +168,12 @@ html[lang="de"] .as-en,html[lang="en"] .as-de{display:none!important}
   .hero h1{font-size:clamp(43px,13.5vw,57px);overflow-wrap:anywhere}
   .hero-lead{font-size:15px}
 }
+
+/* Prevent long translated end-of-page statements from widening 320 px viewports. */
+.statement{min-width:0;overflow-wrap:anywhere}
+.statement h2{max-width:100%;overflow-wrap:anywhere;hyphens:auto}
+.statement .button{max-width:100%;white-space:normal;text-align:center}
+@media(max-width:400px){
+  .statement{padding:78px 20px}
+  .statement h2{font-size:clamp(34px,11.2vw,45px);line-height:1.02;letter-spacing:-.05em}
+}
