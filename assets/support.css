@@ -23,3 +23,15 @@
   .support-single-copy h1{overflow-wrap:anywhere}
   .support-single,.support-product-card,.support-single-copy{min-width:0}
 }
+
+/* Narrow-phone support pages: do not let long membership labels widen the grid. */
+@media(max-width:420px){
+  .support-detail{padding-inline:14px}
+  .support-single{grid-template-columns:minmax(0,1fr)}
+  .support-single-copy{padding:28px 18px}
+  .support-single-copy h1{font-size:clamp(36px,11vw,48px);line-height:1.02;overflow-wrap:anywhere;word-break:normal;hyphens:auto}
+  .support-single-copy>p,.support-list li{overflow-wrap:anywhere}
+  .support-buybox{min-width:0;padding:28px 18px}
+  .support-buybox .button{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center}
+  .support-product-card{min-width:0;padding:28px 18px}
+}
