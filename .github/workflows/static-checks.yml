@@ -1,0 +1,15 @@
+name: Static site checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check static pages
+        run: python3 scripts/check_site.py
+      - name: Verify ticket transcript 90-day retention
+        run: python3 -m unittest discover -s tools/ticket-retention/tests -v

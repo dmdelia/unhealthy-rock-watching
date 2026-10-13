@@ -7,7 +7,9 @@
     ? navigator.languages
     : [navigator.language || 'en'];
   const isGerman = preferredLanguages.some((language) => String(language).toLowerCase().startsWith('de'));
-  const lang = isGerman ? 'de' : 'en';
+  let preference = null;
+  try { preference = localStorage.getItem('astrea-language'); } catch (_) { /* storage unavailable */ }
+  const lang = preference === 'de' || preference === 'en' ? preference : (isGerman ? 'de' : 'en');
   root.lang = lang;
 
   const translations = {
@@ -29,7 +31,7 @@
       data:'DATA', method:'METHOD', output:'OUTPUT', roadmap_title:'From bench testing<br>to near-space flight.',
       phase0:'PHASE 0 / CURRENT', phase1:'PHASE 1 / PLANNED', phase2:'PHASE 2 / PLANNED', phase3:'PHASE 3 / LONG TERM',
       arch:'Architecture & Bench', drops:'Local Drop Tests', strato:'Stratospheric Mission', pinnacle:'High-Altitude Pinnacle',
-      phase0copy:'Flight software, sensor fusion, hardware interrupts and pipeline modularization.',
+      phase0copy:'Flight software architecture, planned sensor fusion, hardware interrupt paths and pipeline modularization. Hardware integration is not yet verified.',
       phase1copy:'Controlled 1,000 m drops to validate flight state machines, grid fins and recovery.',
       phase2copy:'Targeting up to approximately 35 km with the full science payload.',
       phase3copy:'Targeting approximately 40 km and ultra-thin atmospheric conditions.',
@@ -43,6 +45,7 @@
       ic_index:'Autonomous flight hardware for guidance, navigation, control, recovery and scientific payload experiments.',
       jo_index:'Automated exoplanet discovery and validation using space telescope photometry and signal-processing methods.',
       open_project:'Open system ↗',
+      contact_title:'Technical exchange.', contact_copy:'Questions about ICARUS-RLV and JOANUS, technical feedback and contacts in research and teaching are welcome.', contact_independent:'ASTREA SSP is an independently developed project. There is currently no institutional partnership.',
       about_title:'Independent research.<br>End to end.',
       about_lead:'ASTREA Solo Space Program is a single-person aerospace technology and astrophysics research program based in Germany.',
       approach_title:'Hardware, software and analysis belong to the same system.',
@@ -54,7 +57,7 @@
       verify:'VERIFY', verify_copy:'Use controlled tests and independent validation wherever possible.',
       iterate:'ITERATE', iterate_copy:'Use every test to reduce uncertainty in the next design cycle.',
       current_title:'Current development',
-      current_copy:'ICARUS-RLV is progressing through architecture, bench validation and planned controlled drop testing. JOANUS continues pipeline modularization, validation and data-processing development.',
+      current_copy:'ICARUS-RLV is at the architecture and prototype design stage, with bench validation and controlled drop tests planned. JOANUS continues pipeline modularization, validation and data-processing development.',
       view_all:'View all systems ↗',
       close_loop:'Close the loop.',
       ic_long:'ICARUS is designed as an end-to-end avionics and flight-control testbed. The architecture combines deterministic embedded software on ESP32/FreeRTOS with active attitude and aerodynamic control, telemetry and a return-to-launch concept.',
@@ -86,7 +89,7 @@
       data:'DATEN', method:'METHODE', output:'AUSGABE', roadmap_title:'Vom Bench-Test<br>bis zum Near-Space-Flug.',
       phase0:'PHASE 0 / AKTUELL', phase1:'PHASE 1 / GEPLANT', phase2:'PHASE 2 / GEPLANT', phase3:'PHASE 3 / LANGFRISTIG',
       arch:'Architektur & Bench', drops:'Lokale Falltests', strato:'Stratosphärenmission', pinnacle:'Höhenflug',
-      phase0copy:'Flugsoftware, Sensorfusion, Hardware-Interrupts und Modularisierung der Datenpipeline.',
+      phase0copy:'Flugsoftware-Architektur, geplante Sensorfusion, Hardware-Interrupt-Pfade und Modularisierung der Datenpipeline. Die Hardwareintegration ist noch nicht nachgewiesen.',
       phase1copy:'Kontrollierte Abwürfe aus 1.000 m zur Validierung von Flugzuständen, Grid Fins und Bergung.',
       phase2copy:'Zielbereich bis etwa 35 km mit vollständiger wissenschaftlicher Nutzlast.',
       phase3copy:'Zielbereich etwa 40 km unter Bedingungen extrem dünner Atmosphäre.',
@@ -100,6 +103,7 @@
       ic_index:'Autonome Flughardware für Führung, Navigation, Regelung, Bergung und wissenschaftliche Nutzlast-Experimente.',
       jo_index:'Automatisierte Exoplanetensuche und Validierung mit Weltraumteleskop-Photometrie und Signalverarbeitung.',
       open_project:'System öffnen ↗',
+      contact_title:'Fachlicher Austausch.', contact_copy:'Fragen zur Entwicklung von ICARUS-RLV und JOANUS, technische Rückmeldungen und Kontakte zu Forschung und Lehre sind willkommen.', contact_independent:'ASTREA SSP ist derzeit ein unabhängig betriebenes Entwicklungsprojekt. Eine institutionelle Partnerschaft besteht nicht.',
       about_title:'Unabhängige Forschung.<br>Ende zu Ende.',
       about_lead:'Das ASTREA Solo Space Program ist ein von einer Person entwickeltes Forschungsprogramm für Raumfahrttechnologie und Astrophysik in Deutschland.',
       approach_title:'Hardware, Software und Analyse gehören zum selben System.',
@@ -111,7 +115,7 @@
       verify:'VERIFIZIEREN', verify_copy:'Wo möglich kontrollierte Tests und unabhängige Validierung einsetzen.',
       iterate:'ITERIEREN', iterate_copy:'Jeden Test nutzen, um die Unsicherheit im nächsten Entwicklungszyklus zu reduzieren.',
       current_title:'Aktuelle Entwicklung',
-      current_copy:'ICARUS-RLV durchläuft Architektur, Bench-Validierung und geplante kontrollierte Falltests. JOANUS wird bei Modularisierung, Validierung und Datenverarbeitung weiterentwickelt.',
+      current_copy:'ICARUS-RLV befindet sich in der Architektur- und Prototypenentwicklung. Bench-Validierung und kontrollierte Falltests sind geplant. JOANUS wird bei Modularisierung, Validierung und Datenverarbeitung weiterentwickelt.',
       view_all:'Alle Systeme ansehen ↗',
       close_loop:'Den Regelkreis schließen.',
       ic_long:'ICARUS ist als Ende-zu-Ende-Testträger für Avionik und Flugregelung ausgelegt. Die Architektur verbindet deterministische Embedded-Software auf ESP32/FreeRTOS mit aktiver Lage- und Aerodynamikregelung, Telemetrie und einem Return-to-Launch-Konzept.',
@@ -127,6 +131,48 @@
     }
   };
 
+  // Manual language choice applies to this origin; no tracking is performed.
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const switcher = document.createElement('div');
+    switcher.className = 'as-language-switch';
+    switcher.setAttribute('role', 'group');
+    switcher.setAttribute('aria-label', lang === 'de' ? 'Sprache wählen' : 'Select language');
+    for (const code of ['de', 'en']) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = code.toUpperCase();
+      button.lang = code;
+      button.setAttribute('aria-pressed', String(lang === code));
+      button.setAttribute('aria-label', code === 'de' ? 'Deutsch' : 'English');
+      button.addEventListener('click', () => {
+        try { localStorage.setItem('astrea-language', code); } catch (_) { /* storage unavailable */ }
+        document.documentElement.lang = code;
+        window.location.reload();
+      });
+      switcher.appendChild(button);
+    }
+    header.appendChild(switcher);
+  }
+  if (lang === 'en' && document.querySelector('main') && !document.querySelector('.as-language-note')) {
+    const note = document.createElement('p');
+    note.className = 'as-language-note';
+    note.innerHTML = 'ASTREA currently publishes mainly in German. International visitors are welcome. <a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noopener noreferrer">Join our Discord community ↗</a>';
+    document.querySelector('main').prepend(note);
+  }
+
+  // Keyboard users can bypass the shared header on every ASTREA page.
+  const mainLandmark = document.querySelector('main');
+  if (mainLandmark) {
+    mainLandmark.id ||= 'main-content';
+    mainLandmark.setAttribute('tabindex','-1');
+    const skip = document.createElement('a');
+    skip.className = 'as-skip-link';
+    skip.href = '#main-content';
+    skip.textContent = lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content';
+    document.body.prepend(skip);
+  }
+
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
@@ -134,6 +180,11 @@
   });
 
   const titles = {
+    privacy: ['Privacy Policy | ASTREA SSP', 'Datenschutzerklärung | ASTREA SSP'],
+    impressum: ['Legal Notice | ASTREA SSP', 'Impressum | ASTREA SSP'],
+    support: ['Support ASTREA SSP | Hardware & Memberships', 'ASTREA SSP unterstützen | Hardware & Mitgliedschaft'],
+    'support-hardware': ['Support ASTREA Hardware | ASTREA SSP', 'Hardware für ASTREA unterstützen | ASTREA SSP'],
+    'support-member': ['ASTREA Membership | ASTREA SSP', 'ASTREA Mitgliedschaft | ASTREA SSP'],
     index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
     projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
     about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
@@ -152,6 +203,13 @@
     nav?.classList.remove('is-open');
     navToggle?.setAttribute('aria-expanded', 'false');
   }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      navToggle?.setAttribute('aria-expanded','false');
+      navToggle?.focus();
+    }
+  });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const reveal = document.querySelectorAll('.reveal');

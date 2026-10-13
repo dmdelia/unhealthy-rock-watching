@@ -20,7 +20,7 @@
   ];
   const en = [
     'Autonomous ESP32 controller for sensor input, flight state, onboard logging and planned recovery sequences. Up to 240 MHz, independent of the camera payload.',
-    'Measures acceleration and angular velocity along three axes. Provides input for attitude estimation and analyzing rotation and turbulence.',
+    'Planned MPU-6050 IMU. Would measure acceleration and angular velocity along three axes; the sensor has not yet been integrated or tested.',
     'Planned battery input and regulated 5 V power supply for control electronics and actuators.',
     'PWM outputs for steering mechanisms and planned release functions.',
     'Smoothing capacitors to help absorb short load peaks. Actual stability still requires bench testing.',
@@ -29,13 +29,13 @@
   ];
   const copyEn = {
     heading:'Inside the flight computer.',
-    intro:'Seven hardware groups, one flight controller. The ICARUS-M1 board shown is a prototype design and awaits bench validation.',
+    intro:'Seven planned hardware groups, one flight controller design. The IMU has not yet been obtained or integrated. Bench validation is pending.',
     'arch-heading':'Two systems. Separate responsibilities.',
     'arch-esp':'Flight control, sensor input, onboard logging and planned recovery activation. The flight controller is designed to operate independently of the video payload with a separate power supply.',
     'arch-pi':'Planned independent camera system with its own battery and voltage regulator. Multiple video angles are the target. Resolutions and simultaneous streams still require testing.',
     caution:'Development status: concept and prototype layout. The described functions and electrical separation are design goals, not flight-proven capabilities.'
   };
-  const isEnglish = !(navigator.languages || [navigator.language || 'de']).some(x => String(x).toLowerCase().startsWith('de'));
+  const isEnglish = document.documentElement.lang === 'en';
   if (isEnglish) {
     document.querySelectorAll('[data-av]').forEach(el => {
       const key = el.dataset.av;

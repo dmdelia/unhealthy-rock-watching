@@ -16,11 +16,11 @@
 </head>
 <body data-page="icarus">
 <header class="site-header">
-  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP home">
-    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="ASTREA SSP logo">
+  <a class="brand" href="https://astreassp.de/" aria-label="ASTREA SSP Startseite / Home">
+    <img class="brand-logo" src="https://astreassp.de/logo.png" alt="">
     <span>ASTREA SSP</span>
   </a>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENÜ</button>
+  <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" data-i18n="menu">MENÜ</button>
   <nav class="nav">
     <a href="https://astreassp.de/" data-i18n="nav_overview">Übersicht</a>
     <a class="active" href="https://astreassp.de/projects" data-i18n="nav_projects">Systeme</a>
@@ -38,12 +38,12 @@
   <div class="av-inner">
     <div class="av-heading">
       <h2 data-av="heading">Im Inneren des Flugcomputers.</h2>
-      <p data-av="intro">Sieben Baugruppen, eine Flugsteuerung. Das gezeigte ICARUS-M1 Layout ist ein Prototyp und wird in Bench-Tests validiert.</p>
+      <p data-av="intro">Sieben Baugruppen, eine Flugsteuerung. Das gezeigte ICARUS-M1 Layout ist ein Designstand. Einige Komponenten, darunter die IMU, sind noch nicht vorhanden; Bench-Tests stehen aus.</p>
     </div>
     <div class="av-panel" tabindex="0" aria-label="Interaktive Flugcomputer-Baugruppen">
       <div class="av-board-scene">
         <div class="av-board-art">
-          <img class="av-board-image" src="/assets/icarus-m1-board.svg" width="1216" height="828" loading="lazy" alt="ICARUS-M1 Prototypplatine mit ESP32, MPU-6050, Stromversorgung, Servoanschlüssen, Tasten und Buzzer">
+          <img class="av-board-image" src="/assets/icarus-m1-board.svg" width="1216" height="828" loading="lazy" alt="Konzeptionelles ICARUS-M1 Platinenlayout mit geplantem MPU-6050, ESP32 und weiteren Komponenten">
           <span class="av-marker" aria-hidden="true"></span>
           <span class="av-board-glint" aria-hidden="true"></span>
         </div>
@@ -51,7 +51,7 @@
       <div class="av-stage">
         <div class="av-stage-copy" aria-live="polite" aria-atomic="true">
           <article class="av-step is-active" data-av-step="0"><h3>ESP32 DevKit V1</h3><p>Autarker Dual-Core-Rechner für Sensorabfrage, Flugzustand, Logging und geplante Rettungsabläufe. Bis zu 240 MHz, unabhängig von der Kameranutzlast.</p></article>
-<article class="av-step" data-av-step="1" hidden><h3>MPU-6050</h3><p>Beschleunigung und Winkelgeschwindigkeit auf drei Achsen. Grundlage für Lageabschätzung und Analyse von Rotation und Turbulenzen.</p></article>
+<article class="av-step" data-av-step="1" hidden><h3>MPU-6050 (geplant)</h3><p>Geplanter IMU-Sensor zur Messung von Beschleunigung und Winkelgeschwindigkeit. Noch nicht beschafft, integriert oder getestet.</p></article>
 <article class="av-step" data-av-step="2" hidden><h3>Micro BEC & XT30</h3><p>Geplante Spannungsversorgung mit Akkueingang und geregelter 5-V-Schiene für Elektronik und Aktuatoren.</p></article>
 <article class="av-step" data-av-step="3" hidden><h3>Servo-Interfaces M1-M4</h3><p>PWM-Ausgänge für die Ansteuerung von Mechanik, Lenkung und vorgesehenen Freigabefunktionen.</p></article>
 <article class="av-step" data-av-step="4" hidden><h3>U6 / U7</h3><p>Glättungskondensatoren zur Abfederung kurzzeitiger Lastspitzen. Die tatsächliche Stabilität wird erst im Bench-Test validiert.</p></article>
@@ -83,5 +83,6 @@
 </section>
 <section class="principles"><article><span>01</span><h3 data-i18n="avionics">AVIONIK</h3><p data-i18n="avionics_copy">Deterministisches Task-Scheduling, Sensorfusion und Hardware-Interrupt-Pfade.</p></article><article><span>02</span><h3 data-i18n="gnc">GNC</h3><p data-i18n="gnc_copy">Aktive Regelungsarchitektur aus RCS und aerodynamischer Grid-Fin-Steuerung.</p></article><article><span>03</span><h3 data-i18n="science">WISSENSCHAFT</h3><p data-i18n="science_copy">Strahlungs-, Astrobiologie- und optische Nutzlasten erzeugen messbare Missionsdaten.</p></article></section>
 <section class="statement"><h2>JOANUS</h2><a class="button button-dark" href="/projects/joanus" data-i18n="open_jo">System öffnen →</a></section></main>
-<footer class="footer"><span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span><div><a href="/projects" data-i18n="nav_projects">Systeme</a><a href="/about" data-i18n="nav_about">Das Programm</a><a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer">Discord ↗</a><a href="https://x.com/AstreaSSP" target="_blank" rel="noreferrer">X ↗</a></div></footer>
+<footer class="footer"><span data-i18n="copyright">© 2026 ASTREA SOLO SPACE PROGRAM</span><div><a href="/projects" data-i18n="nav_projects">Systeme</a><a href="/about" data-i18n="nav_about">Das Programm</a><a href="https://discord.gg/NRd868Dkj2" target="_blank" rel="noreferrer">Discord ↗</a><a href="https://x.com/AstreaSSP" target="_blank" rel="noreferrer">X ↗</a></div>  <div class="as-legal-links"><a href="/privacy" data-privacy-link>Datenschutz / Privacy</a></div>
+</footer>
 <script src="../assets/site.js"></script><script src="/assets/icarus-avionics.js" defer></script></body></html>
