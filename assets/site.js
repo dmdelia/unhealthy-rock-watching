@@ -45,7 +45,7 @@
       ic_index:'Autonomous flight hardware for guidance, navigation, control, recovery and scientific payload experiments.',
       jo_index:'Automated exoplanet discovery and validation using space telescope photometry and signal-processing methods.',
       open_project:'Open system ↗',
-      contact_title:'Technical exchange.', contact_copy:'Questions about ICARUS-RLV and JOANUS, technical feedback and contacts in research and teaching are welcome.', contact_independent:'ASTREA SSP is an independently developed project. There is currently no institutional partnership.',
+      research_teaser_title:'For research and education.', research_teaser_copy:'Technical focus, current development status and opportunities for discussion with ASTREA SSP.', research_teaser_link:'Explore the technical profile ↗', contact_title:'Technical exchange.', contact_copy:'Questions about ICARUS-RLV and JOANUS, technical feedback and contacts in research and teaching are welcome.', contact_independent:'ASTREA SSP is an independently developed project. There is currently no institutional partnership.',
       about_title:'Independent research.<br>End to end.',
       about_lead:'ASTREA Solo Space Program is a single-person aerospace technology and astrophysics research program based in Germany.',
       approach_title:'Hardware, software and analysis belong to the same system.',
@@ -103,7 +103,7 @@
       ic_index:'Autonome Flughardware für Führung, Navigation, Regelung, Bergung und wissenschaftliche Nutzlast-Experimente.',
       jo_index:'Automatisierte Exoplanetensuche und Validierung mit Weltraumteleskop-Photometrie und Signalverarbeitung.',
       open_project:'System öffnen ↗',
-      contact_title:'Fachlicher Austausch.', contact_copy:'Fragen zur Entwicklung von ICARUS-RLV und JOANUS, technische Rückmeldungen und Kontakte zu Forschung und Lehre sind willkommen.', contact_independent:'ASTREA SSP ist derzeit ein unabhängig betriebenes Entwicklungsprojekt. Eine institutionelle Partnerschaft besteht nicht.',
+      research_teaser_title:'Für Forschung und Lehre.', research_teaser_copy:'Technische Schwerpunkte, Entwicklungsstand und Anknüpfungspunkte für einen fachlichen Austausch mit ASTREA SSP.', research_teaser_link:'Technisches Profil ansehen ↗', contact_title:'Fachlicher Austausch.', contact_copy:'Fragen zur Entwicklung von ICARUS-RLV und JOANUS, technische Rückmeldungen und Kontakte zu Forschung und Lehre sind willkommen.', contact_independent:'ASTREA SSP ist derzeit ein unabhängig betriebenes Entwicklungsprojekt. Eine institutionelle Partnerschaft besteht nicht.',
       about_title:'Unabhängige Forschung.<br>Ende zu Ende.',
       about_lead:'Das ASTREA Solo Space Program ist ein von einer Person entwickeltes Forschungsprogramm für Raumfahrttechnologie und Astrophysik in Deutschland.',
       approach_title:'Hardware, Software und Analyse gehören zum selben System.',
@@ -188,6 +188,7 @@
     index: ['ASTREA SSP | Independent Space Program', 'ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
     projects: ['Projects & Systems | ASTREA SSP', 'Projekte & Systeme | ASTREA SSP'],
     about: ['About ASTREA SSP | Independent Space Program', 'Über ASTREA SSP | Unabhängiges Raumfahrtprogramm'],
+    research: ['Research and Technical Exchange | ASTREA SSP', 'Forschung und fachlicher Austausch | ASTREA SSP']
     icarus: ['ICARUS-RLV | ASTREA SSP', 'ICARUS-RLV | Flugregelung und Avionik | ASTREA SSP'],
     joanus: ['JOANUS | ASTREA SSP', 'JOANUS | Exoplanetensuche und Datenanalyse | ASTREA SSP']
   };
