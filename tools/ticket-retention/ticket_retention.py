@@ -150,7 +150,8 @@ def sweep(root: str | Path, *, apply: bool = False,
                 continue
             held = data.get("hold")
             if held and instant(held["until"]) > current:
-                actions.append("HOLD " + data["ticket"])
+                review_due = instant(held["review_at"]) <= current
+                actions.append("HOLD " + data["ticket"] + (" (REVIEW DUE)" if review_due else ""))
                 continue
             target = transcript_file(base, data["file"])
             if digest(target) != data["sha256"]:
