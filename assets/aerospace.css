@@ -157,3 +157,9 @@ html[lang="de"] .as-en,html[lang="en"] .as-de{display:none!important}
 
 .as-skip-link{position:fixed;z-index:999;top:8px;left:10px;transform:translateY(-180%);padding:12px 18px;background:#fff;color:#080a0c;border:2px solid #101719;font:700 14px Arial,sans-serif}
 .as-skip-link:focus{transform:none}
+
+/* Keep decorative avionics imagery within the smallest mobile viewport. */
+@media(max-width:400px){
+  .hero-stage{right:0;width:100%;max-width:100%;transform:none;overflow:hidden}
+  .hero-stage .esp32-photo{width:90%;max-width:90%;transform:none}
+}
