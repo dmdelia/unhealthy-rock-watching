@@ -11,7 +11,7 @@ PAGES = [
     "index.html", "about.html", "projects.html", "projects/icarus.html",
     "projects/joanus.html", "n/karton-test.html", "404.html",
     "support/index.html", "support/hardware.html", "support/member.html",
-    "privacy.html", "impressum.html",
+    "privacy.html",
 ]
 
 
@@ -40,23 +40,25 @@ def main() -> int:
         parser = MediaAudit()
         parser.feed(html)
         errors.extend(f"{name}: {e}" for e in parser.errors)
-        if name not in {"impressum.html", "privacy.html"}:
+        if name != "privacy.html":
             if 'href="/privacy"' not in html:
                 errors.append(f"{name}: missing privacy link")
-            if 'href="/impressum"' not in html:
-                errors.append(f"{name}: missing legal notice link")
+        if 'href="/impressum"' in html:
+            errors.append(f"{name}: unfinished imprint unexpectedly linked")
     js = (ROOT / "assets/site.js").read_text(encoding="utf-8")
     if "astrea-language" not in js:
         errors.append("manual language preference missing")
     policy = (ROOT / "privacy.html").read_text(encoding="utf-8")
     if "90 Tage" not in policy or "90 days" not in policy:
         errors.append("bilingual ticket retention policy missing")
-    if "ladungsfähige Anschrift" not in policy:
-        errors.append("address blocker not marked")
+    if (ROOT / "impressum.html").exists():
+        errors.append("incomplete imprint must not be published")
+    if "[OFFEN:" in policy or "[PENDING:" in policy:
+        errors.append("unresolved raw placeholder visible on privacy page")
     if errors:
         print("\n".join("FAIL: " + e for e in errors), file=sys.stderr)
         return 1
-    print(f"PASS: {len(PAGES)} pages, alt text, legal navigation and privacy placeholders")
+    print(f"PASS: {len(PAGES)} pages, alt text, privacy navigation; unpublished imprint excluded")
     return 0
 
 
