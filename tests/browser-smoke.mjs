@@ -8,7 +8,7 @@ const paths = [
   '/projects/icarus.html', '/projects/joanus.html',
   '/n/karton-test.html', '/404.html',
   '/support/index.html', '/support/hardware.html', '/support/member.html',
-  '/privacy.html', '/impressum.html'
+  '/privacy.html'
 ];
 
 const browser = await chromium.launch({ headless: true });
@@ -30,9 +30,7 @@ try {
         await page.locator('main').waitFor();
         assert.equal(await page.locator('img:not([alt])').count(), 0, `${path}: image without alt`);
         assert.equal(await page.locator('a[href="/privacy"]').count() > 0, true, `${path}: privacy link missing`);
-        if (!['/privacy.html', '/impressum.html'].includes(path)) {
-          assert.equal(await page.locator('a[href="/impressum"]').count() > 0, true, `${path}: legal link missing`);
-        }
+        assert.equal(await page.locator('a[href="/impressum"]').count(), 0, `${path}: incomplete imprint must not be linked`);
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
         if (overflow > 2) {
           const culprits = await page.evaluate(() => [...document.querySelectorAll('body *')]
@@ -50,6 +48,8 @@ try {
       await context.close();
     }
   }
+  const unpublished = await fetch(ORIGIN + '/impressum.html');
+  assert.equal(unpublished.status, 404, 'unfinished imprint must not be exposed by the site');
   const context = await browser.newContext({ locale: 'de-DE', viewport: { width: 1200, height: 800 } });
   const page = await context.newPage();
   await page.goto(ORIGIN + '/index.html');
