@@ -210,3 +210,6 @@ html[lang="de"] .as-en,html[lang="en"] .as-de{display:none!important}
 .as-research-steps p{font-size:16px;color:#b4c3c1;line-height:1.65}
 @media(max-width:850px){.as-research-teaser-inner{flex-direction:column;align-items:flex-start}.as-research-grid{grid-template-columns:1fr}.as-research-card>p{min-height:0}.as-research-steps{grid-template-columns:1fr;gap:26px}.as-research-section,.as-research-process{padding:70px 24px}.as-research-teaser{padding:65px 24px}}
 @media(max-width:400px){.as-research-hero h1{font-size:clamp(38px,11vw,55px)}.as-research-card h3{font-size:32px}.as-research-teaser .button{white-space:normal;max-width:100%}}
+
+/* Unified ASTREA SSP header. Source of truth: assets/brand.css, also used by WATCH. */
+@import url("/assets/brand.css");
