@@ -14,7 +14,7 @@ const browser = await chromium.launch({ headless: true });
 let checks = 0;
 try {
   for (const locale of ['de-DE', 'en-US']) {
-    for (const width of [375, 768, 1366]) {
+    for (const width of [320, 375, 768, 1024, 1366, 1920]) {
       const context = await browser.newContext({
         locale,
         viewport: { width, height: 900 },
@@ -55,6 +55,9 @@ try {
   await page.goto(ORIGIN + '/support/index.html');
   assert.equal(await page.locator('html').getAttribute('lang'), 'en');
   assert.match(await page.locator('[data-support="title"]').first().innerText(), /Support ASTREA/i);
+  await page.goto(ORIGIN + '/about.html');
+  assert.match(await page.locator('[data-i18n="contact_title"]').innerText(), /Technical exchange/);
+  assert.match(await page.locator('.as-contact-email').getAttribute('href'), /^mailto:contact@astreassp[.]de/);
   await page.goto(ORIGIN + '/privacy.html');
   assert.match(await page.locator('.as-en h1').innerText(), /Privacy Policy/);
   assert.equal(await page.locator('.as-de').isVisible(), false);
