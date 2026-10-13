@@ -9,7 +9,8 @@ Static bilingual German/English website for ASTREA Solo Space Program, deployed 
 - `projects.html`, `projects/icarus.html`, `projects/joanus.html`: development projects
 - `n/karton-test.html`: ICARUS M1 cardboard/fit testing article
 - `support/index.html`, `support/hardware.html`, `support/member.html`: Patreon support navigation
-- `privacy.html` and `impressum.html`: **draft legal pages with blocking placeholders**
+- `privacy.html`: public-facing bilingual data-processing information; provider address and live-configuration reviews remain open
+- `impressum.html` is intentionally NOT published and NOT linked. A draft is preserved on branch `legal/imprint-draft-2026-10` until a valid address and review are available.
 - `assets/site.js`, `assets/support.js`, CSS files: shared static UI and DE/EN translations
 - `scripts/check_site.py`, `tests/browser-smoke.mjs`: static and Chromium QA
 - `tools/ticket-retention/`: tested Python **reference utility** for a separate home-hosted Discord bot
@@ -40,8 +41,8 @@ The CI jobs run these checks automatically on pull requests and attach Chromium 
 
 ## Critical release constraints
 
-**The current legal pages are working drafts. Do not treat placeholders as a lawful substitute for a valid service address.**
+**The incomplete imprint has been withheld from the deployed website. This does not remove statutory imprint obligations.** With Patreon support offered, a valid service address and any other required provider information are urgent legal outstanding matters. Publication or emailing this portfolio must not be represented as legally cleared.
 
 See `docs/privacy-release-checklist.md` for binding address/contract/minor-business questions, live Cloudflare checks, ticket-bot integration and manual QA. The 90-day transcript retention utility is **not** deployed to the home server through this repository.
 
-Pull requests require a descriptive title and description. Do not automatically merge into `main`.
+Pull requests require a descriptive title and description. Merge only after tests and a deliberate release decision; legal obligations remain independently applicable.
