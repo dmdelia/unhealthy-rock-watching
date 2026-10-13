@@ -33,7 +33,12 @@ try {
           assert.equal(await page.locator('a[href="/impressum"]').count() > 0, true, `${path}: legal link missing`);
         }
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
-        assert(overflow <= 2, `${locale} ${width} ${path}: horizontal overflow ${overflow}px`);
+        if (overflow > 2) {
+          const culprits = await page.evaluate(() => [...document.querySelectorAll('body *')]
+            .filter(el => { const r=el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed'; })
+            .slice(0, 12).map(el => el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 60) + ' "' + el.textContent.trim().slice(0, 30) + '"'));
+          assert.fail(`${locale} ${width} ${path}: horizontal overflow ${overflow}px; offenders: ${culprits.join(' / ')}`);
+        }
         checks += 1;
       }
       assert.deepEqual(exceptions, [], `${locale} ${width}: JavaScript errors`);
