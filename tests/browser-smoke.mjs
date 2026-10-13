@@ -4,7 +4,7 @@ import { chromium } from 'playwright';
 
 const ORIGIN = 'http://127.0.0.1:8765';
 const paths = [
-  '/index.html', '/about.html', '/projects.html',
+  '/index.html', '/about.html', '/research.html', '/projects.html',
   '/projects/icarus.html', '/projects/joanus.html',
   '/n/karton-test.html', '/404.html',
   '/support/index.html', '/support/hardware.html', '/support/member.html',
@@ -68,6 +68,10 @@ try {
   await page.screenshot({ path:'qa-screenshots/astrea-home-english-desktop.png', fullPage:true });
   await page.goto(ORIGIN + '/about.html');
   await page.screenshot({ path:'qa-screenshots/astrea-about-english-desktop.png', fullPage:true });
+  await page.goto(ORIGIN + '/research.html');
+  assert.equal(await page.locator('.as-en').isVisible(), true);
+  assert.equal(await page.locator('.as-de').isVisible(), false);
+  assert.match(await page.locator('.as-en h1').first().innerText(), /Engineering in progress/);
   await page.goto(ORIGIN + '/privacy.html');
   assert.match(await page.locator('.as-en h1').innerText(), /Privacy Policy/);
   assert.equal(await page.locator('.as-de').isVisible(), false);
